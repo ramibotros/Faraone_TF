@@ -1,0 +1,20 @@
+def add_loss(self):
+    """
+    THE TRUE DISTRIBUTION WILL BE A PLACEHOLDER
+    Args:
+        yhat: prediction of shape (N, C)
+              N - number of training examples
+              C - Number of classes
+    Returns: loss - scalar
+    """
+    # IN WHAT CASES WOULD tf.log() REACH A 0 VALUE
+    # IF IT REACHES 0, IT WILL BE GIVE A NAN
+    with tf.name_scope("loss") as scope:
+        loss = tf.reduce_mean(-tf.reduce_sum(tf.to_float(self.y) * tf.log(self.yhat), reduction_indices=[1]))
+        with tf.variable_scope("layers"):
+            for i in xrange(1, self.num_layers):
+                with tf.variable_scope("layer_%s" % i, reuse=True):
+                    loss = loss + self.reg * tf.nn.l2_loss(tf.get_variable("W"))
+
+        loss_summary = tf.scalar_summary("loss_summary", loss)
+        return loss, loss_summary
