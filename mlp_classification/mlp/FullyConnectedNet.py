@@ -54,7 +54,7 @@ class FullyConnectedNet(ClassifyBaseModel):
 
 
         self.X = input_features
-        self.y = utils.make_it_hot(input_labels, self.num_classes)
+        self.labels = tf.to_int64(input_labels)
 
         self.yhat = self.calculate_scores()
         self.loss, self.loss_summary = self.add_loss()
@@ -83,7 +83,9 @@ class FullyConnectedNet(ClassifyBaseModel):
         # IN WHAT CASES WOULD tf.log() REACH A 0 VALUE
         # IF IT REACHES 0, IT WILL BE GIVE A NAN
         with tf.name_scope("loss") as scope:
-            loss = tf.reduce_mean(-tf.reduce_sum(tf.to_float(self.y) * tf.log(self.yhat), reduction_indices=[1]))
+            # y is target , yhat is network output
+            #loss = tf.reduce_mean(-tf.reduce_sum(tf.to_float(self.y) * tf.log(self.yhat), reduction_indices=[1]))
+            loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(self.yhat, self.labels))
             with tf.variable_scope("layers"):
                 for i in xrange(1, self.num_layers):
                     with tf.variable_scope("layer_%s" % i, reuse=True):
@@ -121,7 +123,7 @@ class FullyConnectedNet(ClassifyBaseModel):
     def calculate_accuracy(self):
 
         with tf.name_scope('accuracy'):
-            correct_prediction = tf.equal(tf.argmax(self.yhat, 1), tf.argmax(self.y, 1))
+            correct_prediction = tf.equal(tf.argmax(self.yhat, 1), self.labels)
             accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32)) * 100
             accuracy_summary = tf.scalar_summary("accuracy", accuracy)
             return accuracy, accuracy_summary
@@ -135,18 +137,13 @@ class FullyConnectedNet(ClassifyBaseModel):
         """
         previous_out = self.X
         with tf.variable_scope("layers", reuse=True):
-            for i in range(1, self.num_layers):
+            for i in range(1, self.num_layers+1):
                 with tf.variable_scope("layer_%s" % i, reuse=True):
                     weights = tf.get_variable("W")
                     biases = tf.get_variable("b")
                     previous_out = tf.nn.relu(tf.matmul(previous_out, weights) + biases)
 
-            with tf.variable_scope("layer_%s" % (self.num_layers), reuse=True):
-                weights = tf.get_variable("W")
-                biases = tf.get_variable("b")
-                scores = tf.nn.softmax(tf.matmul(previous_out, weights) + biases)
-
-            return scores
+            return previous_out
 
     def initialize_parameters(self):
         """
