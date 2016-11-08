@@ -134,7 +134,7 @@ class FullyConnectedNet(ClassifyBaseModel):
                                                    weights_regularizer=l1_l2_regularizer(self.l1_reg, self.l2_reg),
                                                    scope=layer_scope)
 
-                    if i == self.num_layers: #TODO : (i+1) % 2 and i < self.num_layers:
+                    if i == self.num_layers:
                         previous_out = tf.nn.dropout(previous_out, self.keep_prob)
 
             with tf.variable_scope("layer%d" % (self.num_layers + 1)) as layer_scope:

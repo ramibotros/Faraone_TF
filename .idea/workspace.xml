@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3753841-f2fd-4d0d-81dc-a81446489ff2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/MLP_Class.iml" afterPath="$PROJECT_DIR$/.idea/MLP_Class.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlp_classification/main.py" afterPath="$PROJECT_DIR$/mlp_classification/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlp_classification/mlp/FCNRunner.py" afterPath="$PROJECT_DIR$/mlp_classification/mlp/FCNRunner.py" />
@@ -25,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FullyConnectedNet.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FullyConnectedNet.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mlp_classification/mlp/FullyConnectedNet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="136" column="27" selection-start-line="136" selection-start-column="27" selection-end-line="136" selection-end-column="27" />
+            <state relative-caret-position="468">
+              <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
               <folding>
                 <element signature="e#0#70#0" expanded="true" />
               </folding>
@@ -77,18 +78,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FCNRunner.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mlp_classification/mlp/FCNRunner.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1668">
-              <caret line="117" column="47" selection-start-line="117" selection-start-column="47" selection-end-line="117" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="array_ops.py" pinned="false" current-in-tab="false">
         <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/ops/array_ops.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -122,10 +111,22 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mlp_classification/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+            <state relative-caret-position="150">
+              <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FCNRunner.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mlp_classification/mlp/FCNRunner.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="316">
+              <caret line="130" column="37" selection-start-line="130" selection-start-column="37" selection-end-line="130" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -156,9 +157,9 @@
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/mlp_classification/mlp/utils.py" />
         <option value="$PROJECT_DIR$/mlp_classification/mlp/csvreader.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/mlp/FCNRunner.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/main.py" />
         <option value="$PROJECT_DIR$/mlp_classification/mlp/FullyConnectedNet.py" />
+        <option value="$PROJECT_DIR$/mlp_classification/main.py" />
+        <option value="$PROJECT_DIR$/mlp_classification/mlp/FCNRunner.py" />
       </list>
     </option>
   </component>
@@ -258,6 +259,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="log" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TF_logs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -540,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478566839602</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Faster BN&#10;only one dropout">
+      <created>1478638358903</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1478638358903</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -601,7 +613,8 @@
     <MESSAGE value="For loss: using tf.nn.softmax_cross_entropy_with_logits() directly on integer labels &#10;" />
     <MESSAGE value="Fixed batch_norm&#10;Added summarizers &#10;Added dropout" />
     <MESSAGE value="training config tweaks" />
-    <option name="LAST_COMMIT_MESSAGE" value="training config tweaks" />
+    <MESSAGE value="Faster BN&#10;only one dropout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Faster BN&#10;only one dropout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -979,32 +992,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/mlp/FCNRunner.py">
+    <entry file="file://$PROJECT_DIR$/mlp_classification/mlp/FullyConnectedNet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1668">
-          <caret line="117" column="47" selection-start-line="117" selection-start-column="47" selection-end-line="117" selection-end-column="47" />
+        <state relative-caret-position="468">
+          <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#70#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mlp_classification/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+        <state relative-caret-position="150">
+          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/mlp/FullyConnectedNet.py">
+    <entry file="file://$PROJECT_DIR$/mlp_classification/mlp/FCNRunner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="136" column="27" selection-start-line="136" selection-start-column="27" selection-end-line="136" selection-end-column="27" />
+        <state relative-caret-position="316">
+          <caret line="130" column="37" selection-start-line="130" selection-start-column="37" selection-end-line="130" selection-end-column="37" />
           <folding>
-            <element signature="e#0#70#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>

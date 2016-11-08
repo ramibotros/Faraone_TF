@@ -8,7 +8,7 @@ rec_defaults = [([0.0]) for i in range(161)]  # This
 training_file_name = "data/enigma_train.csv"
 feature_list =   [("var%d" % i) for i in range(160)]
 with tf.name_scope("train_data"):
-    tfeatures, tlabels, tsize = csv.features_labels(200, training_file_name, rec_defaults, feature_list)
+    tfeatures, tlabels, tsize = csv.features_labels(100, training_file_name, rec_defaults, feature_list)
 validation_file_name =  "data/enigma_validation.csv"
 with tf.name_scope("validation_data"):
     vfeatures, vlabels, vsize = csv.features_labels(1744, validation_file_name, rec_defaults, feature_list)
@@ -17,7 +17,7 @@ with tf.name_scope("validation_data"):
 config = {"l1_reg" : 0, #no regularization = 0;
           "l2_reg" : 0.8,  #no regularization = 0;
           "num_hidden_units": 80,
-          "num_layers" : 4,
+          "num_layers" : 3,
           "learning_rate" : 0.001,
           "log_folder" : "log/TF_logs",
           "checkpoint_folder" : "checkpoints/enigma",

@@ -96,23 +96,22 @@ class FCNRunner:
 
     def validate_once_and_sleep(self):
         while True:
-            if not self.newest_checkpoint_path:
+            if not self.last_train_iteration:
                 time.sleep(self.validation_interval)
-                continue
 
             #self.saver.restore(self.session, self.newest_checkpoint_path)
             # Assuming model_checkpoint_path looks something like:
             #   /my-favorite-path/cifar10_train/model.ckpt-0,
             # extract global_step from it.
-            global_step = int(self.newest_checkpoint_path.split('/')[-1].split('-')[-1])
+            #global_step = int(self.newest_checkpoint_path.split('/')[-1].split('-')[-1])
 
             validation_summary, validation_accuracy, validation_loss = self.session.run([self.summaries_merged, self.valid_accuracy, self.valid_loss],
                                                                        feed_dict={self.network.keep_prob: 1, self.network.is_training:False})
 
-            self.valid_summary_writer.add_summary(validation_summary, global_step)
+            self.valid_summary_writer.add_summary(validation_summary, self.last_train_iteration)
 
             print("\n\n"+"*" * 80)
-            print("Validation accuracy at the end of iteration %i:\t\t%f\tloss:\t%f" % (global_step, validation_accuracy, validation_loss))
+            print("Validation accuracy at the end of iteration %i:\t\t%f\tloss:\t%f" % (self.last_train_iteration, validation_accuracy, validation_loss))
             print("*" * 80 + "\n\n")
 
             time.sleep(self.validation_interval)
@@ -129,7 +128,7 @@ class FCNRunner:
         # start_queue_runners has to be called for any Tensorflow graph that uses queues.
 
         self.newest_checkpoint_path = ""
-
+        self.last_train_iteration = 0
         valid_thread = threading.Thread(target=self.validate_once_and_sleep, args=())
         valid_thread.start()
 
@@ -137,6 +136,7 @@ class FCNRunner:
         for i in range(1, self.num_epochs + 1):
 
             self.train_once(i)
+            self.last_train_iteration = i
 
             if i % self.checkpoint_every == 0:
                 self.newest_checkpoint_path = self.saver.save(self.session, self.checkpoint_path, i)
