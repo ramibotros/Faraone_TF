@@ -11,29 +11,24 @@ with tf.name_scope("train_data"):
     tfeatures, tlabels, tsize = csv.features_labels(200, training_file_name, rec_defaults, feature_list)
 validation_file_name =  "data/enigma_validation.csv"
 with tf.name_scope("validation_data"):
-    vfeatures, vlabels, vsize = csv.features_labels(1744, validation_file_name, rec_defaults, feature_list) # 50 might be
-# too small for a validation batch. It is common to test validation scores on the complete validation data
-# every time. So batch_size = complete set, i.e. no true "batching" of the data.
-# Note : the Training accuracy and validation accuracy being printed while the training is running only express the
-# accuracy on the *current batch* that the network was given.
+    vfeatures, vlabels, vsize = csv.features_labels(1744, validation_file_name, rec_defaults, feature_list)
 
 
-config = {"l1_reg" : 0,
-          "l2_reg" : 0.8,  #L2 regularization = 1; no regularization = 0; try changing this last.
-          "num_hidden_units": 50,
+config = {"l1_reg" : 0, #no regularization = 0;
+          "l2_reg" : 0.8,  #no regularization = 0;
+          "num_hidden_units": 80,
           "num_layers" : 4,
           "learning_rate" : 0.001,
-          "learn_type" : "adam",
           "log_folder" : "log/TF_logs",
           "checkpoint_folder" : "checkpoints/enigma",
           "num_epochs" : 1000,  #train on 1000 batches, then stop.
           "batch_size" : tsize,
           "optimizer" : "adam",
-          "keep_prob" : 0.6,
+          "keep_prob" : 0.5,
           "num_classes": 2, #new: number of possible classes in classification
           "num_dimensions": 160, #new: number of feature dimensions
-          "checkpoint_every": 10,
-
+          "checkpoint_every": 10, # in number of iterations
+          "validation_interval": 15, # in seconds
           }
 
 if not os.path.isdir(config["checkpoint_folder"]):

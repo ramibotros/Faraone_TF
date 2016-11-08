@@ -3,7 +3,7 @@ import tensorflow as tf
 from mlp_classification.mlp import utils
 from tensorflow.contrib.layers import fully_connected,  l1_l2_regularizer
 from tensorflow.contrib.slim import batch_norm
-
+from tensorflow.python.ops import control_flow_ops
 
 
 class FullyConnectedNet(ClassifyBaseModel):
@@ -18,7 +18,6 @@ class FullyConnectedNet(ClassifyBaseModel):
             config: dictionary containing the hyperparameters
                     batch_size
                     learning_rate
-                    learn_type
                     optimiser is one of: ["vanilla", "adam", "adagrad", "rmsprop"]
                     log_folder - Folder into which the logs need to be written
                     num_epochs
@@ -35,7 +34,6 @@ class FullyConnectedNet(ClassifyBaseModel):
         self.num_hidden_units = config["num_hidden_units"]
         self.num_layers = int(config["num_layers"])
         self.learning_rate = config["learning_rate"]
-        self.learn_type = config["learn_type"]
 
         self.batch_size = config["batch_size"]
         self.optimizer = config["optimizer"]
@@ -58,11 +56,16 @@ class FullyConnectedNet(ClassifyBaseModel):
         self.labels = tf.to_int64(input_labels)
 
         with tf.variable_scope("network", reuse=reuse):
+
             self.Y_logits = self.make_FN_layers()
 
-        self.loss = self.add_loss()
-        if with_training_op:
-            self.train_op = self.add_optimizer(type=self.learn_type)
+            if with_training_op:
+                self.updates_op = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
+                self.loss = control_flow_ops.with_dependencies(tf.tuple(self.updates_op) ,self.add_loss())
+                self.train_op = self.add_optimizer(type=self.optimizer)
+            else:
+                self.loss = self.add_loss()
+
         self.calculate_accuracy_op = self.calculate_accuracy()
         self.merged = self.add_summaries_operation()
 
@@ -124,16 +127,14 @@ class FullyConnectedNet(ClassifyBaseModel):
             for i in range(1, self.num_layers + 1):
                 with tf.variable_scope("layer%d" % i) as layer_scope:
                     previous_out = fully_connected(previous_out, self.num_hidden_units, activation_fn=tf.nn.elu,
-
                                                    normalizer_fn=batch_norm,
                                                    normalizer_params={"scale": i == self.num_layers,
                                                                       "is_training": self.is_training,
-                                                                      "decay" : 0.9,
-                                                                      "updates_collections": None},
+                                                                      "decay" : 0.9},
                                                    weights_regularizer=l1_l2_regularizer(self.l1_reg, self.l2_reg),
                                                    scope=layer_scope)
 
-                    if (i+1) % 2 and i < self.num_layers:
+                    if i == self.num_layers: #TODO : (i+1) % 2 and i < self.num_layers:
                         previous_out = tf.nn.dropout(previous_out, self.keep_prob)
 
             with tf.variable_scope("layer%d" % (self.num_layers + 1)) as layer_scope:

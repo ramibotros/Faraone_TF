@@ -54,6 +54,7 @@ class FCNRunner:
         self.num_epochs = config["num_epochs"]
         self.keep_prob = config["keep_prob"]
         self.log_folder = config["log_folder"]
+        self.validation_interval = config["validation_interval"]
 
         network = FullyConnectedNet(config)
         self.network = network
@@ -96,7 +97,7 @@ class FCNRunner:
     def validate_once_and_sleep(self):
         while True:
             if not self.newest_checkpoint_path:
-                time.sleep(15)
+                time.sleep(self.validation_interval)
                 continue
 
             #self.saver.restore(self.session, self.newest_checkpoint_path)
@@ -114,7 +115,7 @@ class FCNRunner:
             print("Validation accuracy at the end of iteration %i:\t\t%f\tloss:\t%f" % (global_step, validation_accuracy, validation_loss))
             print("*" * 80 + "\n\n")
 
-            time.sleep(15)
+            time.sleep(self.validation_interval)
 
 
     def run_training(self):
