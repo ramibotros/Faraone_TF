@@ -11,7 +11,7 @@ with tf.name_scope("train_data"):
     tfeatures, tlabels, tsize = csv.features_labels(100, training_file_name, rec_defaults, feature_list)
 validation_file_name =  "data/enigma_validation.csv"
 with tf.name_scope("validation_data"):
-    vfeatures, vlabels, vsize = csv.features_labels(1744, validation_file_name, rec_defaults, feature_list)
+    vfeatures, vlabels, vsize = csv.features_labels(581, validation_file_name, rec_defaults, feature_list)
 
 
 config = {"l1_reg" : 0, #no regularization = 0;

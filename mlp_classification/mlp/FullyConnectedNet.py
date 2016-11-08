@@ -123,6 +123,7 @@ class FullyConnectedNet(ClassifyBaseModel):
 
         previous_out = self.X
 
+
         with tf.variable_scope("layers"):
             for i in range(1, self.num_layers + 1):
                 with tf.variable_scope("layer%d" % i) as layer_scope:
