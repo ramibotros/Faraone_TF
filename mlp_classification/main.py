@@ -4,6 +4,9 @@ import os
 import utils
 import tensorflow as tf
 
+
+print(tf.__version__)
+
 rec_defaults = [([0.0]) for i in range(161)]  # This
 training_file_name = "data/enigma_train.csv"
 feature_list =   [("var%d" % i) for i in range(160)]
