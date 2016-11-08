@@ -2,74 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3753841-f2fd-4d0d-81dc-a81446489ff2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utils.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1476847345.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1476847393.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1476847408.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1476853789.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1476853802.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1476853825.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1477081374.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1477334147.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1477338597.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1477358361.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1477358957.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1477359537.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1477360228.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1477361400.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1477419799.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1477420588.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1477424516.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1477425323.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1477425684.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1477426026.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_logs/events.out.tfevents.1477641299.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1476847393.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1476847408.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1476853789.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1476853802.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1476853825.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1477081374.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1477334147.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1477338597.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1477358361.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1477358958.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1477359538.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1477360228.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1477361400.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1477419800.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1477420588.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1477424517.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1477425323.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1477425684.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1477426026.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_test_logs/events.out.tfevents.1477641300.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1476847393.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1476847408.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1476853789.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1476853802.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1476853825.ramibotros-VirtualBox" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1477081374.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1477334147.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1477338597.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1477358361.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1477358958.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1477359538.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1477360228.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1477361400.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1477419800.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1477420588.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1477424517.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1477425323.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1477425684.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1477426026.TS-P910" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/log/TF_train_logs/events.out.tfevents.1477641300.ramibotros-VirtualBox" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlp_classification/main.py" afterPath="$PROJECT_DIR$/mlp_classification/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlp_classification/mlp/FCNRunner.py" afterPath="$PROJECT_DIR$/mlp_classification/mlp/FCNRunner.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlp_classification/mlp/FullyConnectedNet.py" afterPath="$PROJECT_DIR$/mlp_classification/mlp/FullyConnectedNet.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlp_classification/mlp/csvreader.py" afterPath="$PROJECT_DIR$/mlp_classification/mlp/csvreader.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlp_classification/mlp/utils.py" afterPath="$PROJECT_DIR$/mlp_classification/mlp/utils.py" />
     </list>
     <ignored path="MLP_Class.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,12 +24,12 @@
     <favorites_list name="MLP_Class" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="FullyConnectedNet.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mlp_classification/mlp/FullyConnectedNet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+            <state relative-caret-position="2025">
+              <caret line="135" column="56" selection-start-line="135" selection-start-column="56" selection-end-line="135" selection-end-column="56" />
               <folding>
                 <element signature="e#0#70#0" expanded="true" />
               </folding>
@@ -104,7 +40,7 @@
       <file leaf-file-name="layers.py" pinned="false" current-in-tab="false">
         <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/contrib/layers/python/layers/layers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
+            <state relative-caret-position="1860">
               <caret line="144" column="7" selection-start-line="144" selection-start-column="7" selection-end-line="144" selection-end-column="7" />
               <folding />
             </state>
@@ -114,7 +50,7 @@
       <file leaf-file-name="ClassifyBaseModel.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mlp_classification/mlp/ClassifyBaseModel.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="900">
               <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
               <folding />
             </state>
@@ -124,7 +60,7 @@
       <file leaf-file-name="variable_scope.py" pinned="false" current-in-tab="false">
         <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/ops/variable_scope.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12390">
+            <state relative-caret-position="10500">
               <caret line="718" column="6" selection-start-line="718" selection-start-column="6" selection-end-line="718" selection-end-column="6" />
               <folding />
             </state>
@@ -134,18 +70,18 @@
       <file leaf-file-name="csvreader.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mlp_classification/mlp/csvreader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
+            <state relative-caret-position="480">
               <caret line="32" column="13" selection-start-line="29" selection-start-column="12" selection-end-line="32" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FCNRunner.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FCNRunner.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mlp_classification/mlp/FCNRunner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="91" column="112" selection-start-line="91" selection-start-column="112" selection-end-line="91" selection-end-column="112" />
+            <state relative-caret-position="1740">
+              <caret line="116" column="26" selection-start-line="116" selection-start-column="26" selection-end-line="116" selection-end-column="26" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -156,7 +92,7 @@
       <file leaf-file-name="array_ops.py" pinned="false" current-in-tab="false">
         <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/ops/array_ops.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
+            <state relative-caret-position="19095">
               <caret line="1293" column="4" selection-start-line="1293" selection-start-column="4" selection-end-line="1293" selection-end-column="4" />
               <folding />
             </state>
@@ -166,7 +102,7 @@
       <file leaf-file-name="ops.py" pinned="false" current-in-tab="false">
         <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/framework/ops.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
+            <state relative-caret-position="61185">
               <caret line="4104" column="4" selection-start-line="4104" selection-start-column="4" selection-end-line="4104" selection-end-column="4" />
               <folding />
             </state>
@@ -176,17 +112,17 @@
       <file leaf-file-name="saver.py" pinned="false" current-in-tab="false">
         <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/training/saver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-644">
+            <state relative-caret-position="12735">
               <caret line="887" column="6" selection-start-line="887" selection-start-column="6" selection-end-line="887" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mlp_classification/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
+            <state relative-caret-position="465">
               <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
@@ -220,14 +156,14 @@
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/mlp_classification/mlp/utils.py" />
         <option value="$PROJECT_DIR$/mlp_classification/mlp/csvreader.py" />
+        <option value="$PROJECT_DIR$/mlp_classification/mlp/FCNRunner.py" />
         <option value="$PROJECT_DIR$/mlp_classification/mlp/FullyConnectedNet.py" />
         <option value="$PROJECT_DIR$/mlp_classification/main.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/mlp/FCNRunner.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
+    <option name="width" value="1918" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -255,6 +191,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -361,8 +299,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -590,20 +526,26 @@
       <option name="project" value="LOCAL" />
       <updated>1477985580178</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed batch_norm&#10;Added summarizers &#10;Added dropout">
+      <created>1478565516259</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1478565516259</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1050" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1918" height="1050" extended-state="4" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13385417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13350785" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3967213" sideWeight="0.47218156" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.49121523" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25834543" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3308026" sideWeight="0.7101025" order="2" side_tool="false" content_ui="tabs" x="784" y="407" width="712" height="332" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3308026" sideWeight="0.7101025" order="2" side_tool="false" content_ui="tabs" x="784" y="407" width="712" height="332" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -613,6 +555,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.49121523" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -649,7 +592,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="For loss: using tf.nn.softmax_cross_entropy_with_logits() directly on integer labels &#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="For loss: using tf.nn.softmax_cross_entropy_with_logits() directly on integer labels &#10;" />
+    <MESSAGE value="Fixed batch_norm&#10;Added summarizers &#10;Added dropout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed batch_norm&#10;Added summarizers &#10;Added dropout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -662,7 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -806,7 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -814,7 +756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -822,7 +763,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -830,7 +770,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -838,7 +777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="72" column="157" selection-start-line="72" selection-start-column="157" selection-end-line="72" selection-end-column="157" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -846,9 +784,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-270">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#741#779#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -856,7 +791,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="345" column="0" selection-start-line="345" selection-start-column="0" selection-end-line="345" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -864,7 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="179" column="0" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,7 +805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="227" column="34" selection-start-line="227" selection-start-column="34" selection-end-line="227" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -880,7 +812,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
           <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -888,7 +819,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="1744" column="0" selection-start-line="1744" selection-start-column="0" selection-end-line="1744" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -920,7 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="110" column="4" selection-start-line="110" selection-start-column="4" selection-end-line="110" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -928,7 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="695" column="4" selection-start-line="695" selection-start-column="4" selection-end-line="695" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -936,9 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="452">
           <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding>
-            <element signature="e#1453#1491#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -946,7 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-750">
           <caret line="300" column="6" selection-start-line="300" selection-start-column="6" selection-end-line="300" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -954,7 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="359" column="26" selection-start-line="357" selection-start-column="34" selection-end-line="359" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -992,7 +915,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mlp_classification/mlp/csvreader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
+        <state relative-caret-position="480">
           <caret line="32" column="13" selection-start-line="29" selection-start-column="12" selection-end-line="32" selection-end-column="13" />
           <folding />
         </state>
@@ -1000,23 +923,15 @@
     </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/framework/ops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
+        <state relative-caret-position="61185">
           <caret line="4104" column="4" selection-start-line="4104" selection-start-column="4" selection-end-line="4104" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/mlp/ClassifyBaseModel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/training/saver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-644">
+        <state relative-caret-position="12735">
           <caret line="887" column="6" selection-start-line="887" selection-start-column="6" selection-end-line="887" selection-end-column="6" />
           <folding />
         </state>
@@ -1024,7 +939,7 @@
     </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/ops/variable_scope.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12390">
+        <state relative-caret-position="10500">
           <caret line="718" column="6" selection-start-line="718" selection-start-column="6" selection-end-line="718" selection-end-column="6" />
           <folding />
         </state>
@@ -1032,7 +947,7 @@
     </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/ops/array_ops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
+        <state relative-caret-position="19095">
           <caret line="1293" column="4" selection-start-line="1293" selection-start-column="4" selection-end-line="1293" selection-end-column="4" />
           <folding />
         </state>
@@ -1040,16 +955,34 @@
     </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/contrib/layers/python/layers/layers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
+        <state relative-caret-position="1860">
           <caret line="144" column="7" selection-start-line="144" selection-start-column="7" selection-end-line="144" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mlp_classification/mlp/ClassifyBaseModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mlp_classification/mlp/FCNRunner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1740">
+          <caret line="116" column="26" selection-start-line="116" selection-start-column="26" selection-end-line="116" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mlp_classification/mlp/FullyConnectedNet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+        <state relative-caret-position="2025">
+          <caret line="135" column="56" selection-start-line="135" selection-start-column="56" selection-end-line="135" selection-end-column="56" />
           <folding>
             <element signature="e#0#70#0" expanded="true" />
           </folding>
@@ -1058,20 +991,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mlp_classification/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
+        <state relative-caret-position="465">
           <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/mlp/FCNRunner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="91" column="112" selection-start-line="91" selection-start-column="112" selection-end-line="91" selection-end-column="112" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>

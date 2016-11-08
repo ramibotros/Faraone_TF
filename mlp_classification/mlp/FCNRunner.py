@@ -105,13 +105,13 @@ class FCNRunner:
             # extract global_step from it.
             global_step = int(self.newest_checkpoint_path.split('/')[-1].split('-')[-1])
 
-            validation_summary, validation_accuracy = self.session.run([self.summaries_merged, self.valid_accuracy],
+            validation_summary, validation_accuracy, validation_loss = self.session.run([self.summaries_merged, self.valid_accuracy, self.valid_loss],
                                                                        feed_dict={self.network.keep_prob: 1, self.network.is_training:False})
 
             self.valid_summary_writer.add_summary(validation_summary, global_step)
 
             print("\n\n"+"*" * 80)
-            print("Validation accuracy at the end of iteration %i:\t\t%f" % (global_step, validation_accuracy))
+            print("Validation accuracy at the end of iteration %i:\t\t%f\tloss:\t%f" % (global_step, validation_accuracy, validation_loss))
             print("*" * 80 + "\n\n")
 
             time.sleep(15)

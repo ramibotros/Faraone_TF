@@ -19,9 +19,9 @@ with tf.name_scope("validation_data"):
 
 
 config = {"l1_reg" : 0,
-          "l2_reg" : 1,  #L2 regularization = 1; no regularization = 0; try changing this last.
+          "l2_reg" : 0.8,  #L2 regularization = 1; no regularization = 0; try changing this last.
           "num_hidden_units": 50,
-          "num_layers" : 3,
+          "num_layers" : 4,
           "learning_rate" : 0.001,
           "learn_type" : "adam",
           "log_folder" : "log/TF_logs",
@@ -29,7 +29,7 @@ config = {"l1_reg" : 0,
           "num_epochs" : 1000,  #train on 1000 batches, then stop.
           "batch_size" : tsize,
           "optimizer" : "adam",
-          "keep_prob" : 0.8,
+          "keep_prob" : 0.6,
           "num_classes": 2, #new: number of possible classes in classification
           "num_dimensions": 160, #new: number of feature dimensions
           "checkpoint_every": 10,
