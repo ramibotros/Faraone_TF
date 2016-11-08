@@ -1,5 +1,10 @@
 import tensorflow as tf
 from mlp_classification.mlp.FullyConnectedNet import FullyConnectedNet
+import time
+import threading
+
+
+
 
 class FCNRunner:
     """
@@ -47,91 +52,95 @@ class FCNRunner:
         self.session = tf.Session()
         self.num_classes = config["num_classes"]
         self.num_epochs = config["num_epochs"]
-
+        self.keep_prob = config["keep_prob"]
         self.log_folder = config["log_folder"]
-        self.train_log_folder = config["train_log_folder"]
-        self.test_log_folder = config["test_log_folder"]
-
 
         network = FullyConnectedNet(config)
         self.network = network
 
-        network.bind_graph(train_features, train_labels, reuse=False)
+        network.bind_graph(train_features, train_labels, reuse=False, with_training_op=True)
         self.train_op = network.train_op
         self.train_loss = network.loss
-        self.train_merged = network.merged
-        self.train_accurancy = network.calculate_accuracy_op
+        self.train_accuracy = network.calculate_accuracy_op
 
 
-        #now reuse the graph to bind new OPs that handle the validation data:
-        network.bind_graph(valid_features, valid_labels, reuse=True)
+        # now reuse the graph to bind new OPs that handle the validation data:
+        network.bind_graph(valid_features, valid_labels, reuse=True, with_training_op=False)
         self.valid_loss = network.loss
-        self.valid_merged = network.merged
-        self.valid_accurancy = network.calculate_accuracy_op
+        self.valid_accuracy = network.calculate_accuracy_op
+
+        self.train_summary_writer = tf.train.SummaryWriter(self.log_folder + "/train", self.session.graph)
+        self.valid_summary_writer = tf.train.SummaryWriter(self.log_folder + "/valid", self.session.graph)
+
+        self.summaries_merged = network.merged
+
+        self.saver = tf.train.Saver(tf.all_variables())
+        self.checkpoint_every = config["checkpoint_every"]
+        self.checkpoint_path = config["checkpoint_folder"] + "/training.ckpt"
 
 
-        self.summary_writer = tf.train.SummaryWriter(self.log_folder)
-        self.train_summary_writer = tf.train.SummaryWriter(self.train_log_folder)
-        self.valid_summary_writer = tf.train.SummaryWriter(self.test_log_folder)
+
 
     def close_session(self):
         self.session.close()
 
-
     def test(self, test_features, test_labels):
-        self.network.bind_graph(test_features, test_labels, reuse=True)
-        return self.session.run(self.network.calculate_accuracy_op, feed_dict={self.network.keep_prob: 0.5})
+        pass
+
+    def train_once(self, i):
+        _, train_loss, training_summary, training_accuracy = self.session.run([self.train_op, self.train_loss, self.summaries_merged, self.train_accuracy],
+                                                               feed_dict={self.network.keep_prob: self.keep_prob, self.network.is_training:True})
+        self.train_summary_writer.add_summary(training_summary, i)
+        print("Training accuracy at the end of iteration %i:\t\t%f\t,\tloss:\t%f" % (i, training_accuracy, train_loss))
+
+    def validate_once_and_sleep(self):
+        while True:
+            if not self.newest_checkpoint_path:
+                time.sleep(15)
+                continue
+
+            #self.saver.restore(self.session, self.newest_checkpoint_path)
+            # Assuming model_checkpoint_path looks something like:
+            #   /my-favorite-path/cifar10_train/model.ckpt-0,
+            # extract global_step from it.
+            global_step = int(self.newest_checkpoint_path.split('/')[-1].split('-')[-1])
+
+            validation_summary, validation_accuracy = self.session.run([self.summaries_merged, self.valid_accuracy],
+                                                                       feed_dict={self.network.keep_prob: 1, self.network.is_training:False})
+
+            self.valid_summary_writer.add_summary(validation_summary, global_step)
+
+            print("\n\n"+"*" * 80)
+            print("Validation accuracy at the end of iteration %i:\t\t%f" % (global_step, validation_accuracy))
+            print("*" * 80 + "\n\n")
+
+            time.sleep(15)
 
 
-    def train(self, print_every=1, log_summary=True):
-        """
-        Args:
-            print_every: Print the loss and the epoch number every 10 iterations
-        Returns:
-            pass
-        """
+    def run_training(self):
+
         init_operation = tf.initialize_all_variables()
         self.session.run(init_operation)
 
+
         coord = tf.train.Coordinator()
         tf.train.start_queue_runners(sess=self.session, coord=coord)
-        #start_queue_runners has to be called for any Tensorflow graph that uses queues.
+        # start_queue_runners has to be called for any Tensorflow graph that uses queues.
 
-        # 1. For every epoch
-        #     USED TO BE : Pass once through all the training examples
-        #     NOW : train on one batch.
-        # 2. At the end of every epoch get the validation and train accuracy
-        for i in range(self.num_epochs):
-            if i == 0:
-                print("*" * 80)
-                loss = self.session.run(self.train_loss,
-                                        feed_dict={self.network.keep_prob: 0.5})
-                print("initial loss %f" % (loss,))
-                print("*" * 80)
+        self.newest_checkpoint_path = ""
 
-            _, loss_summary, loss = self.session.run([self.train_op, self.train_merged, self.train_loss],
-                                                     feed_dict={self.network.keep_prob: 0.5})
-            if i % print_every == 0 and log_summary == True:
-                print("loss at iteration %d is %f" % (i, loss))
+        valid_thread = threading.Thread(target=self.validate_once_and_sleep, args=())
+        valid_thread.start()
 
-            self.summary_writer.add_summary(loss_summary, i)
 
-            # PRINT THE TRAINING AND THE VALIDATION ACCURACY
-            training_summary, training_accuracy = self.session.run([self.train_merged, self.train_accurancy],
-                                                                   feed_dict={self.network.keep_prob: 0.5})
+        for i in range(1, self.num_epochs + 1):
 
-            validation_summary, validation_accuracy = self.session.run([self.valid_merged, self.valid_accurancy],
-                                                                       feed_dict={self.network.keep_prob: 0.5})
+            self.train_once(i)
 
-            print("*" * 80)
-            print("Training accuracy at the end of epoch %i: %f" % (i, training_accuracy))
-            print("Validation accuracy at the end of epoch %i %f" % (i, validation_accuracy))
-            print("*" * 80)
+            if i % self.checkpoint_every == 0:
+                self.newest_checkpoint_path = self.saver.save(self.session, self.checkpoint_path, i)
+                print "\nCheckpoint saved in %s\n" % self.newest_checkpoint_path
 
-            self.train_summary_writer.add_summary(training_summary, i)
-            self.valid_summary_writer.add_summary(validation_summary, i)
 
-            # TODO: STORE THE BEST PARAMETERS
 
-        return validation_accuracy
 
