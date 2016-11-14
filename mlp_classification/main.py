@@ -5,7 +5,6 @@ import utils
 import tensorflow as tf
 
 
-print(tf.__version__)
 
 rec_defaults = [([0.0]) for i in range(161)]  # This
 training_file_name = "data/enigma_train.csv"
@@ -22,7 +21,7 @@ config = {"l1_reg" : 0, #no regularization = 0;
           "num_hidden_units": 80,
           "num_layers" : 3,
           "learning_rate" : 0.001,
-          "log_folder" : "log/TF_logs",
+          "log_folder" : "log/Testrun_logs",
           "checkpoint_folder" : "checkpoints/enigma",
           "num_epochs" : 1000,  #train on 1000 batches, then stop.
           "batch_size" : tsize,
@@ -33,11 +32,14 @@ config = {"l1_reg" : 0, #no regularization = 0;
           "checkpoint_every": 10, # in number of iterations
           "validation_interval": 15, # in seconds
           }
+#num_classes and num_dimnsions used to be inferred from the data. But the data is now coming into the model
+#as a continuous stream, after the model graph is built.
 
 if not os.path.isdir(config["checkpoint_folder"]):
     utils.mkdir_recursive(config["checkpoint_folder"])
-#num_classes and num_dimnsions used to be inferred from the data. But the data is now coming into the model
-#as a continuous stream, after the model graph is built.
+if not os.path.isdir(config["log_folder"]):
+    utils.mkdir_recursive(config["log_folder"])
+
 
 
 iris_runner = FCNRunner.FCNRunner(tfeatures, tlabels, vfeatures, vlabels, config)

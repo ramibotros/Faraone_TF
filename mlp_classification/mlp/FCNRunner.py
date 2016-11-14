@@ -140,7 +140,7 @@ class FCNRunner:
 
             if i % self.checkpoint_every == 0:
                 self.newest_checkpoint_path = self.saver.save(self.session, self.checkpoint_path, i)
-                print "\nCheckpoint saved in %s\n" % self.newest_checkpoint_path
+                print ("\nCheckpoint saved in %s\n" % self.newest_checkpoint_path)
 
 
 
