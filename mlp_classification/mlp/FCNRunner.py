@@ -2,8 +2,8 @@ import tensorflow as tf
 from mlp_classification.mlp.FullyConnectedNet import FullyConnectedNet
 import time
 import threading
-
-
+from subprocess import call, Popen, PIPE
+import os
 
 
 class FCNRunner:
@@ -117,6 +117,13 @@ class FCNRunner:
             time.sleep(self.validation_interval)
 
 
+    def start_tensorboard(self):
+        log_dir_abs_path = os.path.abspath(self.log_folder)
+        print("tensorboard --logdir=%s" % (log_dir_abs_path))
+        process = call(["tensorboard", "--logdir=%s" %(log_dir_abs_path)], stderr=PIPE)
+        print("\n")
+        process.communicate
+
     def run_training(self):
 
         init_operation = tf.initialize_all_variables()
@@ -127,12 +134,16 @@ class FCNRunner:
         tf.train.start_queue_runners(sess=self.session, coord=coord)
         # start_queue_runners has to be called for any Tensorflow graph that uses queues.
 
+
+        tensorboard_thread = threading.Thread(target=self.start_tensorboard, args=())
+        tensorboard_thread.start()
+
         self.newest_checkpoint_path = ""
         self.last_train_iteration = 0
         valid_thread = threading.Thread(target=self.validate_once_and_sleep, args=())
         valid_thread.start()
 
-
+        print ("\n")
         for i in range(1, self.num_epochs + 1):
 
             self.train_once(i)
