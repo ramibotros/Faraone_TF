@@ -32,6 +32,5 @@ def features_labels(batch_size, filename, record_defaults, feature_names):
     with tf.name_scope("labels"):
         labels = tf.squeeze(tf.reshape(labels, [batch_size, 1]))
 
-    print(labels)
     return features, labels, batch_size
 

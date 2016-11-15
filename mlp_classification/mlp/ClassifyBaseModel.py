@@ -14,7 +14,6 @@ class ClassifyBaseModel(object):
     """
 
     def __init__(self, config):
-        print ("Initialising the session in the base classify model")
         self.config = config
         self.num_classes = config["num_classes"]
 

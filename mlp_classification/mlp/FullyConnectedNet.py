@@ -29,6 +29,7 @@ class FullyConnectedNet(ClassifyBaseModel):
                     train_log_folder  ----
         """
         super(FullyConnectedNet, self).__init__(config)
+
         self.l1_reg = [float(config["l1_reg"])]
         self.l2_reg = [float(config["l2_reg"])]
         self.num_hidden_units = config["num_hidden_units"]
@@ -42,7 +43,7 @@ class FullyConnectedNet(ClassifyBaseModel):
 
         self.add_placeholder()
 
-    def bind_graph(self, input_features, input_labels, reuse=False, with_training_op=False):
+    def bind_graph(self, tag, input_features, input_labels, reuse=False, with_training_op=False):
         # Builds all ops that correspond to the NN graph and its evaluators and optimizers.
         # Needs the input data Tensors/Queues as argument
         # Any of the built ops, e.g. self.loss,
@@ -50,7 +51,7 @@ class FullyConnectedNet(ClassifyBaseModel):
         # If reuse=True , the TF graph is not built, but simply reused from the memory with the most recent parameters.
 
 
-
+        self.tag = tag
 
         self.X = input_features
         self.labels = tf.to_int64(input_labels)
@@ -67,7 +68,7 @@ class FullyConnectedNet(ClassifyBaseModel):
                 self.loss = self.add_loss()
 
         self.calculate_accuracy_op = self.calculate_accuracy()
-        self.merged = self.add_summaries_operation()
+        self.summaries_merged = self.get_summaries()
 
     def add_placeholder(self):
         """
@@ -79,10 +80,10 @@ class FullyConnectedNet(ClassifyBaseModel):
 
     def add_loss(self):
 
-        with tf.name_scope("loss") as scope:
+        with tf.name_scope("%s_loss" % self.tag) as scope:
             loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(self.Y_logits, self.labels))
 
-            utils.variable_summaries(loss, "loss_summary")
+            utils.variable_summaries(loss, "loss", self.tag)
             return loss
 
     def add_optimizer(self, type="vanilla"):
@@ -108,15 +109,16 @@ class FullyConnectedNet(ClassifyBaseModel):
                 train_op = tf.train.RMSPropOptimizer(self.learning_rate).minimize(self.loss)
             return train_op
 
-    def add_summaries_operation(self):
-        return tf.merge_all_summaries()
+    def get_summaries(self):
+
+        return tf.merge_summary(tf.get_collection("%s_summaries" % self.tag))
 
     def calculate_accuracy(self):
 
-        with tf.name_scope('accuracy'):
+        with tf.name_scope('%s_accuracy' % self.tag):
             correct_prediction = tf.equal(tf.argmax(self.Y_logits, 1), self.labels)
             accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32)) * 100
-            utils.variable_summaries(accuracy, "accuracy_summary")
+            utils.variable_summaries(accuracy, "accuracy", self.tag)
             return accuracy
 
     def make_FN_layers(self):

@@ -21,7 +21,7 @@ config = {"l1_reg" : 0, #no regularization = 0;
           "num_hidden_units": 80,
           "num_layers" : 3,
           "learning_rate" : 0.001,
-          "log_folder" : "log/Testrun_logs",
+          "log_folder" : "log/Testrun_logs6",
           "checkpoint_folder" : "checkpoints/enigma",
           "num_epochs" : 1000,  #train on 1000 batches, then stop.
           "batch_size" : tsize,
@@ -31,14 +31,16 @@ config = {"l1_reg" : 0, #no regularization = 0;
           "num_dimensions": 160, #new: number of feature dimensions
           "checkpoint_every": 10, # in number of iterations
           "validation_interval": 15, # in seconds
+          "experiment_ID": "",
           }
 #num_classes and num_dimnsions used to be inferred from the data. But the data is now coming into the model
 #as a continuous stream, after the model graph is built.
 
+
+
 if not os.path.isdir(config["checkpoint_folder"]):
     utils.mkdir_recursive(config["checkpoint_folder"])
-if not os.path.isdir(config["log_folder"]):
-    utils.mkdir_recursive(config["log_folder"])
+
 
 
 

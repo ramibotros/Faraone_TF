@@ -4,7 +4,7 @@ import time
 import threading
 from subprocess import call, Popen, PIPE
 import os
-
+import utils
 
 class FCNRunner:
     """
@@ -55,25 +55,30 @@ class FCNRunner:
         self.keep_prob = config["keep_prob"]
         self.log_folder = config["log_folder"]
         self.validation_interval = config["validation_interval"]
+        self.experiment_ID = config["experiment_ID"]
 
         network = FullyConnectedNet(config)
         self.network = network
 
-        network.bind_graph(train_features, train_labels, reuse=False, with_training_op=True)
+        network.bind_graph("TRAIN", train_features, train_labels, reuse=False, with_training_op=True)
         self.train_op = network.train_op
         self.train_loss = network.loss
         self.train_accuracy = network.calculate_accuracy_op
-
+        self.train_summaries_merged = network.summaries_merged
 
         # now reuse the graph to bind new OPs that handle the validation data:
-        network.bind_graph(valid_features, valid_labels, reuse=True, with_training_op=False)
+        network.bind_graph("VALID", valid_features, valid_labels, reuse=True, with_training_op=False)
         self.valid_loss = network.loss
         self.valid_accuracy = network.calculate_accuracy_op
+        self.valid_summaries_merged = network.summaries_merged
 
-        self.train_summary_writer = tf.train.SummaryWriter(self.log_folder + "/train", self.session.graph)
-        self.valid_summary_writer = tf.train.SummaryWriter(self.log_folder + "/valid", self.session.graph)
 
-        self.summaries_merged = network.merged
+        if self.experiment_ID == "" : self.experiment_ID=utils.date_time_string()
+        self.train_summary_writer = tf.train.SummaryWriter("%s/%s_train" %(self.log_folder, self.experiment_ID), self.session.graph)
+        self.valid_summary_writer = tf.train.SummaryWriter("%s/%s_valid" %(self.log_folder, self.experiment_ID))
+
+
+
 
         self.saver = tf.train.Saver(tf.all_variables())
         self.checkpoint_every = config["checkpoint_every"]
@@ -89,10 +94,11 @@ class FCNRunner:
         pass
 
     def train_once(self, i):
-        _, train_loss, training_summary, training_accuracy = self.session.run([self.train_op, self.train_loss, self.summaries_merged, self.train_accuracy],
+        _, train_loss, training_summary, training_accuracy = self.session.run([self.train_op, self.train_loss, self.train_summaries_merged, self.train_accuracy],
                                                                feed_dict={self.network.keep_prob: self.keep_prob, self.network.is_training:True})
         self.train_summary_writer.add_summary(training_summary, i)
         print("Training accuracy at the end of iteration %i:\t\t%f\t,\tloss:\t%f" % (i, training_accuracy, train_loss))
+        self.train_summary_writer.flush()
 
     def validate_once_and_sleep(self):
         while True:
@@ -105,7 +111,7 @@ class FCNRunner:
             # extract global_step from it.
             #global_step = int(self.newest_checkpoint_path.split('/')[-1].split('-')[-1])
 
-            validation_summary, validation_accuracy, validation_loss = self.session.run([self.summaries_merged, self.valid_accuracy, self.valid_loss],
+            validation_summary, validation_accuracy, validation_loss = self.session.run([self.valid_summaries_merged, self.valid_accuracy, self.valid_loss],
                                                                        feed_dict={self.network.keep_prob: 1, self.network.is_training:False})
 
             self.valid_summary_writer.add_summary(validation_summary, self.last_train_iteration)
@@ -116,13 +122,28 @@ class FCNRunner:
 
             time.sleep(self.validation_interval)
 
+    def validate_once(self, i):
+        validation_summary, validation_accuracy, validation_loss = self.session.run(
+            [self.valid_summaries_merged, self.valid_accuracy, self.valid_loss],
+            feed_dict={self.network.keep_prob: 1, self.network.is_training: False})
+
+        self.valid_summary_writer.add_summary(validation_summary, i)
+
+
+        print("\n\n" + "*" * 80)
+        print("Validation accuracy at the end of iteration %i:\t\t%f\tloss:\t%f" % (
+        i, validation_accuracy, validation_loss))
+        print("*" * 80 + "\n\n")
+        self.valid_summary_writer.flush()
+
 
     def start_tensorboard(self):
         log_dir_abs_path = os.path.abspath(self.log_folder)
-        print("tensorboard --logdir=%s" % (log_dir_abs_path))
-        process = call(["tensorboard", "--logdir=%s" %(log_dir_abs_path)], stderr=PIPE)
-        print("\n")
-        process.communicate
+        print("tensorboard --logdir=%s\n" % (log_dir_abs_path))
+        #Popen(["tensorboard", "--logdir=%s" %(log_dir_abs_path)])
+        #print("\n")
+
+        utils.background_process(["tensorboard", "--logdir=%s" %(log_dir_abs_path)])
 
     def run_training(self):
 
@@ -140,8 +161,6 @@ class FCNRunner:
 
         self.newest_checkpoint_path = ""
         self.last_train_iteration = 0
-        valid_thread = threading.Thread(target=self.validate_once_and_sleep, args=())
-        valid_thread.start()
 
         print ("\n")
         for i in range(1, self.num_epochs + 1):
@@ -152,6 +171,9 @@ class FCNRunner:
             if i % self.checkpoint_every == 0:
                 self.newest_checkpoint_path = self.saver.save(self.session, self.checkpoint_path, i)
                 print ("\nCheckpoint saved in %s\n" % self.newest_checkpoint_path)
+
+            if i% self.validation_interval == 0:
+                self.validate_once(i)
 
 
 
