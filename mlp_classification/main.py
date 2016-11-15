@@ -21,7 +21,7 @@ config = {"l1_reg" : 0, #no regularization = 0;
           "num_hidden_units": 80,
           "num_layers" : 3,
           "learning_rate" : 0.001,
-          "log_folder" : "log/Testrun_logs6",
+          "log_folder" : "log/TB_logs",
           "checkpoint_folder" : "checkpoints/enigma",
           "num_epochs" : 1000,  #train on 1000 batches, then stop.
           "batch_size" : tsize,
