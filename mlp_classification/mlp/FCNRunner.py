@@ -4,7 +4,7 @@ import time
 import threading
 from subprocess import call, Popen, PIPE
 import os
-import utils
+from mlp_classification.mlp import utils
 
 class FCNRunner:
     """

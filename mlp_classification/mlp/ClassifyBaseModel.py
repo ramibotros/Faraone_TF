@@ -1,8 +1,4 @@
 import tensorflow as tf
-import numpy as np
-import time
-import random
-import utils
 
 class ClassifyBaseModel(object):
     """

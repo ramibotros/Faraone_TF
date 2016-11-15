@@ -1,7 +1,7 @@
 from mlp_classification.mlp import FCNRunner
 from mlp_classification.mlp import csvreader as csv
 import os
-import utils
+from mlp_classification.mlp import utils
 import tensorflow as tf
 
 
