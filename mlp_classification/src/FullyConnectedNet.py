@@ -124,6 +124,8 @@ class FullyConnectedNet():
             self.add_all_outputs_and_losses(input_features,
                                             input_data_rows,
                                             corpus_tag)
+
+
             if with_training_op:
                 self.updates_op = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
                 self.loss = control_flow_ops.with_dependencies(tf.tuple(self.updates_op),
@@ -132,6 +134,10 @@ class FullyConnectedNet():
             else:
                 self.loss = self.loss_sum
                 # self.calculate_accuracy_op already done
+
+            all_weight_vars = [tf.reshape(var, [-1]) for var in tf.get_collection(tf.GraphKeys.MODEL_VARIABLES) if "/weights" in var.name]
+            tf.summary.histogram("weight_hist", tf.concat(0,all_weight_vars), collections=["%s_summaries" % corpus_tag])
+
             self.summaries_merged = self.get_summaries(corpus_tag)
 
     def add_placeholders(self):
