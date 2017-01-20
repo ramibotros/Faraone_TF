@@ -14,8 +14,9 @@ class My_Config_Parser(configparser.ConfigParser):
             return int(raw_get)
 
 
+
 def read_config(path):
-    config = My_Config_Parser(inline_comment_prefixes=['#'])
+    config = My_Config_Parser(inline_comment_prefixes=['#'], interpolation=configparser.ExtendedInterpolation())
     assert os.path.isfile(path)
     config.read(path)
 

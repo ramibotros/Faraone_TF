@@ -31,23 +31,25 @@ class FCNRunner:
     The validation output ops (validation_loss, etc...) are only concerned with applying the FCN to the validation data.
     """
 
-    def __init__(self, train_data_rows, valid_data_rows, test_data_rows, config):
+    def __init__(self, config):
 
-        self.session = tf.Session()
+
+        self.config = config
 
         #config:
-        self.log_folder = config["PATHS"]["log_folder"]
-        self.experiment_ID = config["PROCESS"]["experiment_ID"]
-        if self.experiment_ID == "": self.experiment_ID = utils.date_time_string()
-        self.validation_interval = int(config["PROCESS"]["validation_interval"])
-        self.keep_prob = float(config["TRAINING"]["dropout_keep_probability"])
-        self.num_epochs = int(config["TRAINING"]["num_epochs"])
+        self.log_folder = config.get("PATHS","log_folder")
+        self.experiment_ID = config.get("PROCESS","experiment_ID") or utils.date_time_string()
+        self.validation_interval = config.getint("PROCESS","validation_interval", fallback=15)
+        self.keep_prob = config.getfloat("TRAINING","dropout_keep_probability", fallback=1.0)
+        self.num_epochs = config.getint("TRAINING","num_epochs", fallback=0)
 
         self.network = FullyConnectedNet(config)
 
 
+    def bind_training_dataqueue(self, train_data_rows):
+        config = self.config
 
-        train_batch_size = int(config["TRAINING"]["batch_size"])
+        train_batch_size = config.getint("TRAINING","batch_size")
         self.network.bind_graph("TRAIN", train_data_rows, train_batch_size , reuse=False, with_training_op=True)
         self.train_op = self.network.train_op
         self.train_loss = self.network.loss
@@ -56,46 +58,48 @@ class FCNRunner:
 
 
 
+    def bind_validation_dataqueue(self, valid_data_rows):
+        config = self.config
+
         # now reuse the graph to bind new OPs that handle the validation data:
-        valid_batch_size = int(config["TRAINING"]["validation_batch_size"])
+        valid_batch_size = config.getint("TRAINING","validation_batch_size")
         self.network.bind_graph("VALID", valid_data_rows, valid_batch_size, reuse=True, with_training_op=False)
         self.valid_loss = self.network.loss
         self.valid_accuracy = self.network.calculate_accuracy_op
         self.valid_summaries_merged = self.network.summaries_merged
 
 
+
+    def bind_test_dataqueue(self, test_data_rows):
+        config = self.config
+
         #now resuse the graph to bind new OPS that handle the test data:
-        if test_data_rows:
-            test_batch_size = int(config["TEST"]["batch_size"])
-            self.network.bind_graph("TEST", test_data_rows, test_batch_size, reuse=True, with_training_op=False)
-            self.test_loss = self.network.loss
-            self.test_accuracy = self.network.calculate_accuracy_op
-            self.test_summaries_merged = self.network.summaries_merged
-            self.test_predictions = self.network.predictions
-            self.test_pred_path = config["TEST"]["write_predictions_to"]
+        test_batch_size = config.getint("TEST","batch_size")
+        self.network.bind_graph("TEST", test_data_rows, test_batch_size, reuse=True, with_training_op=False)
+        self.test_loss = self.network.loss
+        self.test_accuracy = self.network.calculate_accuracy_op
+        self.test_summaries_merged = self.network.summaries_merged
+        self.test_predictions = self.network.predictions
+        self.test_pred_path = config["TEST"]["write_predictions_to"]
 
 
-        self.train_summary_writer = tf.summary.FileWriter("%s/%s_train" % (self.log_folder, self.experiment_ID),
-                                                           self.session.graph)
-        self.valid_summary_writer = tf.summary.FileWriter("%s/%s_valid" % (self.log_folder, self.experiment_ID))
 
-        if test_data_rows:
-            self.test_summary_writer = tf.summary.FileWriter("%s/%s_test" % (self.log_folder, self.experiment_ID))
+    def initialize(self):
+        config = self.config
+        self.session = tf.Session()
 
         self.saver = tf.train.Saver(tf.global_variables())
-        self.checkpoint_every = int(config["PROCESS"]["checkpoint_every"])
-        self.checkpoint_path = config["PATHS"]["checkpoint_dir"] + "/training.ckpt"
+        self.checkpoint_every = config.getint("PROCESS","checkpoint_every")
+        self.checkpoint_path = config.get("PATHS","checkpoint_dir") + "/training.ckpt"
 
-        load_checkpoint = config["PROCESS"]["initialize_with_checkpoint"] or None
+        load_checkpoint = config.get("PROCESS","initialize_with_checkpoint") or None
         if load_checkpoint:
             self.load_checkpoint(load_checkpoint)
 
-        self.init()
-
-
-    def init(self):
         init_operation = tf.global_variables_initializer()
         self.session.run(init_operation)
+
+        self.create_summary_writers()
 
         coord = tf.train.Coordinator()
         tf.train.start_queue_runners(sess=self.session, coord=coord)
@@ -104,6 +108,18 @@ class FCNRunner:
 
         tensorboard_thread = threading.Thread(target=self.start_tensorboard, args=())
         tensorboard_thread.start()
+
+    def create_summary_writers(self):
+
+        if hasattr(self,"train_summaries_merged"):
+            self.train_summary_writer = tf.summary.FileWriter("%s/%s_train" % (self.log_folder, self.experiment_ID),
+                                                              self.session.graph)
+
+        if hasattr(self,"valid_summaries_merged"):
+            self.valid_summary_writer = tf.summary.FileWriter("%s/%s_valid" % (self.log_folder, self.experiment_ID))
+
+        if hasattr(self,"test_summaries_merged"):
+            self.test_summary_writer = tf.summary.FileWriter("%s/%s_test" % (self.log_folder, self.experiment_ID))
 
     def close_session(self):
         self.session.close()
@@ -186,8 +202,6 @@ class FCNRunner:
         utils.background_process(["tensorboard", "--logdir=%s" % (log_dir_abs_path)])
 
     def run_training(self):
-
-
 
         self.newest_checkpoint_path = ""
         self.last_train_iteration = 0

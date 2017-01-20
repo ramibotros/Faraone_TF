@@ -1,26 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3753841-f2fd-4d0d-81dc-a81446489ff2" name="Default" comment="requested changes for Janurary">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mlp_classification/config/default.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mlp_classification/src/main.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/.vscode/launch.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/Temp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mlp_classification/main.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/utils.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mlp_classification/__init__.py" afterPath="$PROJECT_DIR$/mlp_classification/src/configreader.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mlp_classification/mlp/ClassifyBaseModel.py" afterPath="$PROJECT_DIR$/mlp_classification/src/ClassifyBaseModel.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mlp_classification/mlp/FCNRunner.py" afterPath="$PROJECT_DIR$/mlp_classification/src/FCNRunner.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mlp_classification/mlp/FullyConnectedNet.py" afterPath="$PROJECT_DIR$/mlp_classification/src/FullyConnectedNet.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mlp_classification/mlp/__init__.py" afterPath="$PROJECT_DIR$/mlp_classification/src/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mlp_classification/mlp/csvreader.py" afterPath="$PROJECT_DIR$/mlp_classification/src/csvreader.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mlp_classification/mlp/utils.py" afterPath="$PROJECT_DIR$/mlp_classification/src/utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/MLP_Class.iml" afterPath="$PROJECT_DIR$/.idea/MLP_Class.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="a3753841-f2fd-4d0d-81dc-a81446489ff2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlp_classification/config/default.ini" afterPath="$PROJECT_DIR$/mlp_classification/config/default.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlp_classification/src/FCNRunner.py" afterPath="$PROJECT_DIR$/mlp_classification/src/FCNRunner.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlp_classification/src/configreader.py" afterPath="$PROJECT_DIR$/mlp_classification/src/configreader.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlp_classification/src/main.py" afterPath="$PROJECT_DIR$/mlp_classification/src/main.py" />
     </list>
     <list id="34e257b5-fed4-450d-8cdc-175a464be87c" name="trash" comment="" />
     <ignored path="MLP_Class.iws" />
@@ -43,56 +29,14 @@
     <favorites_list name="MLP_Class" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.66306305">
+    <splitter split-orientation="horizontal" split-proportion="0.4904092">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="csvreader.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/mlp_classification/src/csvreader.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="405">
-                  <caret line="27" column="103" selection-start-line="27" selection-start-column="103" selection-end-line="27" selection-end-column="103" />
-                  <folding>
-                    <element signature="e#115#138#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="logging_ops.py" pinned="false" current-in-tab="false">
-            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/logging_ops.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="212">
-                  <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="gen_parsing_ops.py" pinned="false" current-in-tab="false">
-            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/gen_parsing_ops.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="input.py" pinned="false" current-in-tab="false">
-            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/training/input.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-58">
-                  <caret line="810" column="4" selection-start-line="810" selection-start-column="4" selection-end-line="810" selection-end-column="4" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/mlp_classification/src/utils.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+                <state relative-caret-position="315">
+                  <caret line="24" column="84" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="84" />
                   <folding />
                 </state>
               </provider>
@@ -101,12 +45,22 @@
           <file leaf-file-name="FCNRunner.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/mlp_classification/src/FCNRunner.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="190" column="0" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+                <state relative-caret-position="1092">
+                  <caret line="120" column="49" selection-start-line="120" selection-start-column="49" selection-end-line="120" selection-end-column="49" />
                   <folding>
                     <element signature="e#0#23#0" expanded="true" />
-                    <element signature="e#6246#7349#0" expanded="false" />
+                    <element signature="e#6659#7762#0" expanded="false" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="configparser.py" pinned="false" current-in-tab="false">
+            <entry file="file:///usr/lib/python3.4/configparser.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="483" column="0" selection-start-line="483" selection-start-column="0" selection-end-line="483" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -114,8 +68,8 @@
           <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/mlp_classification/src/main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+                <state relative-caret-position="517">
+                  <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
                   <folding>
                     <element signature="e#0#16#0" expanded="true" />
                   </folding>
@@ -123,11 +77,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FullyConnectedNet.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="FullyConnectedNet.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/mlp_classification/src/FullyConnectedNet.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-54">
-                  <caret line="136" column="31" selection-start-line="136" selection-start-column="31" selection-end-line="136" selection-end-column="31" />
+                <state relative-caret-position="165">
+                  <caret line="122" column="35" selection-start-line="122" selection-start-column="35" selection-end-line="122" selection-end-column="35" />
                   <folding>
                     <element signature="e#0#23#0" expanded="true" />
                   </folding>
@@ -135,21 +89,53 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="variable_scope.py" pinned="false" current-in-tab="false">
-            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/variable_scope.py">
+          <file leaf-file-name="summary.py" pinned="false" current-in-tab="false">
+            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/summary/summary.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="212">
-                  <caret line="1252" column="4" selection-start-line="1252" selection-start-column="4" selection-end-line="1252" selection-end-column="4" />
+                <state relative-caret-position="413">
+                  <caret line="192" column="29" selection-start-line="192" selection-start-column="29" selection-end-line="192" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ops.py" pinned="false" current-in-tab="false">
-            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/framework/ops.py">
+          <file leaf-file-name="configreader.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/mlp_classification/src/configreader.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="212">
-                  <caret line="4011" column="4" selection-start-line="4011" selection-start-column="4" selection-end-line="4011" selection-end-column="4" />
+                <state relative-caret-position="270">
+                  <caret line="18" column="111" selection-start-line="18" selection-start-column="111" selection-end-line="18" selection-end-column="111" />
+                  <folding>
+                    <element signature="e#0#19#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="layers.py" pinned="false" current-in-tab="false">
+            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/contrib/layers/python/layers/layers.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="15">
+                  <caret line="1264" column="4" selection-start-line="1264" selection-start-column="4" selection-end-line="1264" selection-end-column="4" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="variables.py" pinned="false" current-in-tab="false">
+            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/contrib/framework/python/ops/variables.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="297">
+                  <caret line="211" column="4" selection-start-line="211" selection-start-column="4" selection-end-line="211" selection-end-column="4" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/contrib/layers/python/layers/utils.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="297">
+                  <caret line="192" column="4" selection-start-line="192" selection-start-column="4" selection-end-line="192" selection-end-column="4" />
                   <folding />
                 </state>
               </provider>
@@ -162,8 +148,8 @@
           <file leaf-file-name="default.ini" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/mlp_classification/config/default.ini">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+                <state relative-caret-position="510">
+                  <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
@@ -203,13 +189,13 @@
         <option value="$PROJECT_DIR$/mlp_classification/mlp/csvreader.py" />
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/mlp_classification/src/ClassifyBaseModel.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/src/configreader.py" />
         <option value="$PROJECT_DIR$/mlp_classification/src/utils.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/src/main.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/src/FullyConnectedNet.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/config/default.ini" />
-        <option value="$PROJECT_DIR$/mlp_classification/src/FCNRunner.py" />
         <option value="$PROJECT_DIR$/mlp_classification/src/csvreader.py" />
+        <option value="$PROJECT_DIR$/mlp_classification/src/FullyConnectedNet.py" />
+        <option value="$PROJECT_DIR$/mlp_classification/src/configreader.py" />
+        <option value="$PROJECT_DIR$/mlp_classification/src/main.py" />
+        <option value="$PROJECT_DIR$/mlp_classification/src/FCNRunner.py" />
+        <option value="$PROJECT_DIR$/mlp_classification/config/default.ini" />
       </list>
     </option>
   </component>
@@ -323,6 +309,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MLP_Class" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MLP_Class" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mlp_classification" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -675,7 +679,21 @@
       <option name="project" value="LOCAL" />
       <updated>1479244274501</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="requested changes for Janurary">
+      <created>1483805458290</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1483805458290</updated>
+    </task>
+    <task id="LOCAL-00016" summary="histogram of weights">
+      <created>1483808271749</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1483808271749</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -691,17 +709,17 @@
     <frame x="0" y="0" width="1920" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1328125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18541667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27874187" sideWeight="0.40208334" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27874187" sideWeight="0.4046875" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28958786" sideWeight="0.49121523" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25834543" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27874187" sideWeight="0.59791666" order="2" side_tool="false" content_ui="tabs" x="784" y="407" width="712" height="332" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27874187" sideWeight="0.5953125" order="2" side_tool="false" content_ui="tabs" x="784" y="407" width="712" height="332" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35683298" sideWeight="0.52781844" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36008677" sideWeight="0.5651042" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -738,50 +756,16 @@
     <MESSAGE value="changed default log folder name" />
     <MESSAGE value="fixed import utils" />
     <MESSAGE value="requested changes for Janurary" />
-    <option name="LAST_COMMIT_MESSAGE" value="requested changes for Janurary" />
+    <MESSAGE value="histogram of weights" />
+    <option name="LAST_COMMIT_MESSAGE" value="histogram of weights" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="20" />
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#23#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/configreader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/config/default.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/data/enigma_validation.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="580" column="6" selection-start-line="580" selection-start-column="6" selection-end-line="580" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mlp_classification/data/enigma_train.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -819,7 +803,7 @@
         <state relative-caret-position="0">
           <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
           <folding>
-            <element signature="e#115#138#0" expanded="true" />
+            <element signature="e#115#138#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -887,7 +871,7 @@
         <state relative-caret-position="0">
           <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
           <folding>
-            <element signature="e#115#138#0" expanded="true" />
+            <element signature="e#115#138#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -977,7 +961,7 @@
         <state relative-caret-position="0">
           <caret line="16" column="64" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
           <folding>
-            <element signature="e#115#138#0" expanded="true" />
+            <element signature="e#115#138#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1053,24 +1037,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/python3.4/configparser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="1201" column="0" selection-start-line="1201" selection-start-column="0" selection-end-line="1201" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/configreader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/io_ops.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
@@ -1119,24 +1085,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/variable_scope.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
@@ -1145,49 +1093,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/framework/ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="4011" column="4" selection-start-line="4011" selection-start-column="4" selection-end-line="4011" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/FullyConnectedNet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="136" column="31" selection-start-line="136" selection-start-column="31" selection-end-line="136" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/config/default.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/FCNRunner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="190" column="0" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#6246#7349#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mlp_classification/src/csvreader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="103" selection-start-line="27" selection-start-column="103" selection-end-line="27" selection-end-column="103" />
           <folding>
-            <element signature="e#115#138#0" expanded="true" />
+            <element signature="e#115#138#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/framework/ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="3894" column="2" selection-start-line="3894" selection-start-column="2" selection-end-line="3894" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/contrib/layers/python/layers/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="192" column="4" selection-start-line="192" selection-start-column="4" selection-end-line="192" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/contrib/framework/python/ops/variables.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="211" column="4" selection-start-line="211" selection-start-column="4" selection-end-line="211" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/contrib/layers/python/layers/layers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1264" column="4" selection-start-line="1264" selection-start-column="4" selection-end-line="1264" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mlp_classification/src/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="24" column="84" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/summary/summary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="192" column="29" selection-start-line="192" selection-start-column="29" selection-end-line="192" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mlp_classification/src/configreader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="111" selection-start-line="18" selection-start-column="111" selection-end-line="18" selection-end-column="111" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.4/configparser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="483" column="0" selection-start-line="483" selection-start-column="0" selection-end-line="483" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mlp_classification/config/default.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mlp_classification/src/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mlp_classification/src/FCNRunner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1092">
+          <caret line="120" column="49" selection-start-line="120" selection-start-column="49" selection-end-line="120" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#6659#7762#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mlp_classification/src/FullyConnectedNet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="122" column="35" selection-start-line="122" selection-start-column="35" selection-end-line="122" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
