@@ -1,5 +1,5 @@
 import tensorflow as tf
-from tensorflow.contrib.layers import fully_connected, l1_l2_regularizer
+from tensorflow.contrib.layers import fully_connected, l1_l2_regularizer, convolution
 from tensorflow.contrib.slim import batch_norm
 from tensorflow.python.ops import control_flow_ops
 
@@ -31,6 +31,7 @@ class FullyConnectedNet():
 
     def make_hidden_FN_layers(self, input_layer):
         previous_out = input_layer
+
 
         with tf.variable_scope("hidden_layers"):
             for i in range(1, self.num_layers + 1):
@@ -131,11 +132,11 @@ class FullyConnectedNet():
             if with_training_op:
                 self.updates_op = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
                 self.loss = control_flow_ops.with_dependencies(tf.tuple(self.updates_op),
-                                                               self.loss_sum)  # all losses
+                                                               self.loss_sum / batch_size)  # all losses
 
                 self.train_op = self.add_optimizer(type=self.optimizer)
             else:
-                self.loss = self.loss_sum
+                self.loss = self.loss_sum / batch_size
                 # self.calculate_accuracy_op already done
 
             all_weight_vars = [tf.reshape(var, [-1]) for var in tf.get_collection(tf.GraphKeys.MODEL_VARIABLES) if
