@@ -32,6 +32,7 @@ if "TRAINING" in config:
 if "TEST" in config:
     test_path = config["TEST"]["test_file"]
     test_rows = csv.data_stream(test_path, int(config["TEST"]["batch_size"]))
+    iris_runner.bind_test_dataqueue(test_rows)
 
 
 iris_runner.initialize()
@@ -40,3 +41,4 @@ if "TRAINING" in config:
     iris_runner.run_training()
 if "TEST" in config:
     iris_runner.run_test()
+

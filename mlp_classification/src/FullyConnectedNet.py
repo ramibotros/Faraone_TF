@@ -1,8 +1,9 @@
 import tensorflow as tf
-import utils
 from tensorflow.contrib.layers import fully_connected, l1_l2_regularizer
 from tensorflow.contrib.slim import batch_norm
 from tensorflow.python.ops import control_flow_ops
+
+import utils
 from configreader import get_task_sections
 
 
@@ -15,14 +16,14 @@ class FullyConnectedNet():
     def __init__(self, config):
         self.input_features_slicer = config.get_as_slice("FEATURES", "columns")
 
-        self.l1_reg = [float(config["TRAINING"]["l1_regularization"])]
-        self.l2_reg = [float(config["TRAINING"]["l1_regularization"])]
-        self.num_hidden_units = int(config["NETWORK"]["layer_size"])
-        self.num_layers = int(config["NETWORK"]["num_layers"])
-        self.learning_rate = float(config["TRAINING"]["learning_rate"])
+        self.l1_reg = [config.getfloat("TRAINING","l1_regularization", fallback=0.0)]
+        self.l2_reg = [config.getfloat("TRAINING","l2_regularization", fallback=0.0)]
+        self.num_hidden_units = config.getint("NETWORK", "layer_size")
+        self.num_layers = config.getint("NETWORK", "num_layers")
+        self.learning_rate = config.getfloat("TRAINING", "learning_rate")
 
-        self.optimizer = config["TRAINING"]["optimizer"]
-        self.keep_prob = float(config["TRAINING"]["dropout_keep_probability"])
+        self.optimizer = config.get("TRAINING","optimizer")
+        self.keep_prob = config.getfloat("TRAINING","dropout_keep_probability", fallback=1.0)
 
         self.config_task_sections = get_task_sections(config)
 
@@ -34,13 +35,16 @@ class FullyConnectedNet():
         with tf.variable_scope("hidden_layers"):
             for i in range(1, self.num_layers + 1):
                 with tf.variable_scope("layer%d" % i) as layer_scope:
-                    previous_out = fully_connected(previous_out, self.num_hidden_units, activation_fn=tf.nn.elu,
+                    previous_out = fully_connected(tf.add(previous_out, tf.ones_like(previous_out)),
+                                                   self.num_hidden_units, activation_fn=tf.nn.relu,
                                                    normalizer_fn=batch_norm,
                                                    normalizer_params={"scale": i == self.num_layers,
                                                                       "is_training": self.is_training,
-                                                                      "decay": 0.9},
+                                                                      "decay": 0.999},
                                                    weights_regularizer=l1_l2_regularizer(self.l1_reg, self.l2_reg),
                                                    scope=layer_scope)
+
+
 
                     if i == self.num_layers:
                         previous_out = tf.nn.dropout(previous_out, self.keep_prob)
@@ -81,7 +85,7 @@ class FullyConnectedNet():
             utils.variable_summaries(loss, "loss", corpus_tag)
 
         with tf.name_scope('%s_accuracy_%s' % (corpus_tag, task_tag)):
-            accuracy = loss #meaningless
+            accuracy = loss  # meaningless
             utils.variable_summaries(accuracy, "accuracy_meaningless_", corpus_tag)
             self.calculate_accuracy_op = accuracy
 
@@ -107,7 +111,6 @@ class FullyConnectedNet():
             losses = losses + loss
         self.loss_sum = losses
 
-
     def bind_graph(self, corpus_tag, input_data_rows, batch_size, reuse=False, with_training_op=False):
         # Builds all ops that correspond to the NN graph and its evaluators and optimizers.
         # Needs the input data Tensors/Queues as argument
@@ -125,18 +128,20 @@ class FullyConnectedNet():
                                             input_data_rows,
                                             corpus_tag)
 
-
             if with_training_op:
                 self.updates_op = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
                 self.loss = control_flow_ops.with_dependencies(tf.tuple(self.updates_op),
                                                                self.loss_sum)  # all losses
+
                 self.train_op = self.add_optimizer(type=self.optimizer)
             else:
                 self.loss = self.loss_sum
                 # self.calculate_accuracy_op already done
 
-            all_weight_vars = [tf.reshape(var, [-1]) for var in tf.get_collection(tf.GraphKeys.MODEL_VARIABLES) if "/weights" in var.name]
-            tf.summary.histogram("weight_hist", tf.concat(0,all_weight_vars), collections=["%s_summaries" % corpus_tag])
+            all_weight_vars = [tf.reshape(var, [-1]) for var in tf.get_collection(tf.GraphKeys.MODEL_VARIABLES) if
+                               "/weights" in var.name]
+            tf.summary.histogram("weight_hist", tf.concat(0, all_weight_vars),
+                                 collections=["%s_summaries" % corpus_tag])
 
             self.summaries_merged = self.get_summaries(corpus_tag)
 
@@ -174,7 +179,3 @@ class FullyConnectedNet():
     def get_summaries(self, corpus_tag):
 
         return tf.summary.merge(tf.get_collection("%s_summaries" % corpus_tag))
-
-
-
-
