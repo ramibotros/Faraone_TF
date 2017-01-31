@@ -15,11 +15,15 @@ def read_csv(filename, batch_size):
         key, value = reader.read(filename_queue)
         decoded = tf.decode_csv(value, record_defaults=[([0.0]) for _ in range(num_cols)])
 
+
+
     with tf.name_scope("shuffled_batching"):
-        return tf.train.shuffle_batch(decoded,
+        batches = tf.train.shuffle_batch(decoded,
                                       batch_size=batch_size,
                                       capacity=batch_size * 50,
                                       min_after_dequeue=batch_size*10)
+        #batches[0] = tf.Print(batches[0], batches)
+        return batches
 
 def data_stream(filename, batch_size):
 
