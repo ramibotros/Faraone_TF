@@ -109,7 +109,8 @@ class FullyConnectedNet():
                                                             task_name)
             else:
                 assert False
-            losses = losses + loss
+            loss_weight = int(task_config.get("weight", 1))
+            losses = losses + loss* loss_weight
         return losses
 
     def bind_graph(self, corpus_tag, input_data_cols, batch_size, reuse=False, with_training_op=False):

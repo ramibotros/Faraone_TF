@@ -46,33 +46,33 @@ class FCNRunner:
 
         self.network = FullyConnectedNet(config)
 
-    def bind_training_dataqueue(self, train_data_rows):
+    def bind_training_dataqueue(self, train_data_cols):
         config = self.config
 
         train_batch_size = config.getint("TRAINING", "batch_size")
-        self.network.bind_graph("TRAIN", train_data_rows, train_batch_size, reuse=False, with_training_op=True)
+        self.network.bind_graph("TRAIN", train_data_cols, train_batch_size, reuse=False, with_training_op=True)
         self.train_op = self.network.train_op
         self.train_loss = self.network.loss
         self.train_accuracy = self.network.calculate_accuracy_op
         self.train_summaries_merged = self.network.summaries_merged
 
 
-    def bind_validation_dataqueue(self, valid_data_rows):
+    def bind_validation_dataqueue(self, valid_data_cols):
         config = self.config
 
         # now reuse the graph to bind new OPs that handle the validation data:
         valid_batch_size = config.getint("TRAINING", "validation_batch_size")
-        self.network.bind_graph("VALID", valid_data_rows, valid_batch_size, reuse=True, with_training_op=False)
+        self.network.bind_graph("VALID", valid_data_cols, valid_batch_size, reuse=True, with_training_op=False)
         self.valid_loss = self.network.loss
         self.valid_accuracy = self.network.calculate_accuracy_op
         self.valid_summaries_merged = self.network.summaries_merged
 
-    def bind_test_dataqueue(self, test_data_rows):
+    def bind_test_dataqueue(self, test_data_cols):
         config = self.config
 
         # now resuse the graph to bind new OPS that handle the test data:
         test_batch_size = config.getint("TEST", "batch_size")
-        self.network.bind_graph("TEST", test_data_rows, test_batch_size, reuse=True, with_training_op=False)
+        self.network.bind_graph("TEST", test_data_cols, test_batch_size, reuse=True, with_training_op=False)
         self.test_loss = self.network.loss
         self.test_accuracy = self.network.calculate_accuracy_op
         self.test_summaries_merged = self.network.summaries_merged
