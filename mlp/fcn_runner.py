@@ -5,13 +5,13 @@ import time
 import numpy as np
 import tensorflow as tf
 
+from mlp .fcn import FCN
 import utils
-from FullyConnectedNet import FullyConnectedNet
 
 
 class FCNRunner:
     """
-    This class acts as a factory and controller for FullyConnectedNet.py
+    This class acts as a factory and controller for fcn.py
     FullyConnectedNet builds a tensorflow graph that represents the NN and its evaluation ops.
     FCNRunner uses the FullyConnectedNet graph to build two other graphs: one for training and one for validation.
     A good thing is that both the training and testing graphs share the same variables (https://www.tensorflow.org/versions/r0.11/how_tos/variable_scope/index.html)
@@ -44,7 +44,7 @@ class FCNRunner:
         self.keep_prob = config.getfloat("TRAINING", "dropout_keep_probability", fallback=1.0)
         self.num_epochs = config.getint("TRAINING", "num_epochs", fallback=0)
 
-        self.network = FullyConnectedNet(config)
+        self.network = FCN(config)
 
     def bind_training_dataqueue(self, train_data_cols):
         config = self.config
@@ -91,8 +91,9 @@ class FCNRunner:
         if load_checkpoint:
             self.load_checkpoint(load_checkpoint)
 
-        init_operation = tf.global_variables_initializer()
-        self.session.run(init_operation)
+        self.session.run(tf.global_variables_initializer())
+        self.session.run(tf.local_variables_initializer()) #for streaming metrics
+
 
         self.create_summary_writers()
 
@@ -175,8 +176,8 @@ class FCNRunner:
         self.valid_summary_writer.flush()
 
     def test_once(self):
-        test_summary, test_accuracy, test_loss, test_predictions = self.session.run(
-            [self.test_summaries_merged, self.test_accuracy, self.test_loss, self.test_predictions],
+        test_summary, test_loss, test_predictions, test_accuracy = self.session.run(
+            [self.test_summaries_merged, self.test_loss, self.test_predictions, self.test_accuracy],
             feed_dict={self.network.keep_prob: 1, self.network.is_training: False})
 
         self.test_summary_writer.add_summary(test_summary, 1)

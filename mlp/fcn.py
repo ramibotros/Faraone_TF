@@ -1,13 +1,14 @@
 import tensorflow as tf
 from tensorflow.contrib.layers import fully_connected, l1_l2_regularizer
+from tensorflow.contrib.metrics import streaming_accuracy, streaming_mean_relative_error
 from tensorflow.contrib.slim import batch_norm
 from tensorflow.python.ops import control_flow_ops
 
 import utils
-from configreader import get_task_sections
+from config_reader import get_task_sections
 
 
-class FullyConnectedNet():
+class FCN:
     """
         This employs a Softmax Classifier for multilabel classification
         We will employ a simple Softmax Model to classify the captions
@@ -35,7 +36,7 @@ class FullyConnectedNet():
         with tf.variable_scope("hidden_layers"):
             for i in range(1, self.num_layers + 1):
                 with tf.variable_scope("layer%d" % i) as layer_scope:
-                    if self.is_residual and i>1:
+                    if self.is_residual and i > 1:
                         previous_out = tf.add(previous_out, tf.ones_like(previous_out))
                     previous_out = fully_connected(previous_out,
                                                    self.num_hidden_units, activation_fn=tf.nn.relu,
@@ -46,14 +47,15 @@ class FullyConnectedNet():
                                                    weights_regularizer=l1_l2_regularizer(self.l1_reg, self.l2_reg),
                                                    scope=layer_scope)
 
-                    #if i == self.num_layers:
-                    if i%2 == 0:
+                    # if i == self.num_layers:
+                    if i % 2 == 0:
                         previous_out = tf.nn.dropout(previous_out, self.keep_prob)
 
         last_hidden_layer = previous_out
         return last_hidden_layer
 
-    def add_classification_output_layer(self, last_hidden_layer, gt_labels, num_classes, corpus_tag, task_tag):
+    def add_classification_output_layer(self, last_hidden_layer, gt_labels, num_classes, corpus_tag, task_tag,
+                                        loss_weight=1):
         # returns loss op
         with tf.variable_scope("output_layer_%s" % task_tag) as layer_scope:
             last_out = fully_connected(last_hidden_layer, num_classes, activation_fn=tf.identity,
@@ -62,18 +64,22 @@ class FullyConnectedNet():
             self.predictions = tf.nn.softmax(last_out)
 
         with tf.name_scope("%s_loss_%s" % (corpus_tag, task_tag)):
-            loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(last_out, gt_labels))
+            loss = loss_weight * tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(last_out, gt_labels))
             utils.variable_summaries(loss, "loss", corpus_tag)
+            tf.add_to_collection(tf.GraphKeys.LOSSES, loss)
 
         with tf.name_scope('%s_accuracy_%s' % (corpus_tag, task_tag)):
-            correct_prediction = tf.equal(tf.argmax(last_out, 1), gt_labels)
-            accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32)) * 100
+            # correct_prediction = tf.equal(tf.argmax(last_out, 1), gt_labels)
+            # accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32)) * 100
+            accuracy, _ = streaming_accuracy(tf.argmax(last_out, 1), gt_labels, name="acc_%s" % corpus_tag,
+                                             updates_collections=tf.GraphKeys.UPDATE_OPS)
+
             utils.variable_summaries(accuracy, "accuracy", corpus_tag)
-            self.calculate_accuracy_op = accuracy
 
-        return loss
+            updates_op = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
+            self.calculate_accuracy_op = control_flow_ops.with_dependencies(updates_op, accuracy)
 
-    def add_linear_output_layer(self, last_hidden_layer, ground_truth, corpus_tag, task_tag):
+    def add_linear_output_layer(self, last_hidden_layer, ground_truth, corpus_tag, task_tag, loss_weight=1):
         # returns loss op
         with tf.variable_scope("output_layer_%s" % task_tag) as layer_scope:
             last_out = fully_connected(last_hidden_layer, 1, activation_fn=tf.identity,
@@ -82,35 +88,37 @@ class FullyConnectedNet():
             self.predictions = last_out
 
         with tf.name_scope("%s_loss_%s" % (corpus_tag, task_tag)):
-            loss = tf.reduce_mean(tf.squared_difference(last_out, ground_truth))
+            loss = loss_weight * tf.reduce_mean(tf.squared_difference(last_out, ground_truth))
             utils.variable_summaries(loss, "loss", corpus_tag)
+            tf.add_to_collection(tf.GraphKeys.LOSSES, loss)
 
         with tf.name_scope('%s_accuracy_%s' % (corpus_tag, task_tag)):
-            accuracy = loss  # meaningless
-            utils.variable_summaries(accuracy, "accuracy_meaningless_", corpus_tag)
-            self.calculate_accuracy_op = accuracy
+            accuracy, _ = streaming_mean_relative_error(last_out, ground_truth, ground_truth,
+                                                        name="acc_%s" % corpus_tag,
+                                                        updates_collections=tf.GraphKeys.UPDATE_OPS)
+            accuracy = 1 - accuracy
+            utils.variable_summaries(accuracy, "accuracy", corpus_tag)
 
-        return loss
+            updates_op = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
+            self.calculate_accuracy_op = control_flow_ops.with_dependencies(updates_op, accuracy)
 
     def add_all_outputs_and_losses(self, input_features, input_data_cols, corpus_tag):
         hidden_output = self.make_hidden_FN_layers(input_features)
-        losses = tf.zeros([1])
         for task_name, task_config in self.config_task_sections.items():
             ground_truth = input_data_cols[int(task_config["ground_truth_column"])]
-            loss = None
             if task_config["type"] == "linear":
                 task_name += "_lin"
-                loss = self.add_linear_output_layer(hidden_output, ground_truth, corpus_tag, task_name)
+                self.add_linear_output_layer(hidden_output, ground_truth, corpus_tag, task_name)
             elif task_config["type"] == "classification":
                 task_name += "_classf"
                 num_classes = int(task_config["num_classes"])
                 ground_truth = tf.to_int64(ground_truth)
-                loss = self.add_classification_output_layer(hidden_output, ground_truth, num_classes, corpus_tag,
-                                                            task_name)
+                self.add_classification_output_layer(hidden_output, ground_truth, num_classes, corpus_tag,
+                                                     task_name)
             else:
                 assert False
-            loss_weight = int(task_config.get("weight", 1))
-            losses = losses + loss* loss_weight
+        losses = tf.reduce_sum(tf.get_collection(tf.GraphKeys.LOSSES)) \
+                 + tf.reduce_sum(tf.get_collection(tf.GraphKeys.REGULARIZATION_LOSSES))
         return losses
 
     def bind_graph(self, corpus_tag, input_data_cols, batch_size, reuse=False, with_training_op=False):
@@ -131,15 +139,10 @@ class FullyConnectedNet():
                                                        input_data_cols,
                                                        corpus_tag)
 
+            updates_op = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
+            self.loss = control_flow_ops.with_dependencies(updates_op, loss_sum)  # all losses
             if with_training_op:
-                self.updates_op = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
-                self.loss = control_flow_ops.with_dependencies(self.updates_op,
-                                                               loss_sum)  # all losses
-
                 self.train_op = self.add_optimizer(type=self.optimizer)
-            else:
-                self.loss = loss_sum
-                # self.calculate_accuracy_op already done
 
             all_weight_vars = [tf.reshape(var, [-1]) for var in tf.get_collection(tf.GraphKeys.MODEL_VARIABLES) if
                                "/weights" in var.name]

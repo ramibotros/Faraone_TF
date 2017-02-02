@@ -2,11 +2,12 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/mlp_classification/src" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/mlp_classification/.idea" />
-      <excludeFolder url="file://$MODULE_DIR$/mlp_classification/log" />
-      <excludeFolder url="file://$MODULE_DIR$/mlp_classification/log/TF_logs/train" />
-      <excludeFolder url="file://$MODULE_DIR$/mlp_classification/log/TF_logs/valid" />
+      <sourceFolder url="file://$MODULE_DIR$/../MLP_Class/mlp_classification/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/checkpoints" />
+      <excludeFolder url="file://$MODULE_DIR$/log" />
+      <excludeFolder url="file://$MODULE_DIR$/log/TF_logs/train" />
+      <excludeFolder url="file://$MODULE_DIR$/log/TF_logs/valid" />
+      <excludeFolder url="file://$MODULE_DIR$/../MLP_Class/mlp_classification/.idea" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.4.3+ (/usr/bin/python3.4)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

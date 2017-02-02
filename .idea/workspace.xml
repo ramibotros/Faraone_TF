@@ -2,12 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3753841-f2fd-4d0d-81dc-a81446489ff2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlp_classification/config/default.ini" afterPath="$PROJECT_DIR$/mlp_classification/config/default.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlp_classification/src/FCNRunner.py" afterPath="$PROJECT_DIR$/mlp_classification/src/FCNRunner.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlp_classification/src/FullyConnectedNet.py" afterPath="$PROJECT_DIR$/mlp_classification/src/FullyConnectedNet.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlp_classification/src/csvreader.py" afterPath="$PROJECT_DIR$/mlp_classification/src/csvreader.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mlp_classification/src/main.py" afterPath="$PROJECT_DIR$/mlp_classification/src/main.py" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/enigma_test_sex(age).csv" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/enigma_train_sex-age.csv" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/enigma_validation_sex(age).csv" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_chaos.txt" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_fake.csv" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_simple.txt" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_small.csv" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_sum.txt" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_trivial.txt" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_uniq.csv" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/valid_uniq.txt" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/setup.py" />
+      <change type="DELETED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/.idea/Psych.iml" afterPath="" />
+      <change type="DELETED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/src/ClassifyBaseModel.py" afterPath="" />
+      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/.idea/MLP_Class.iml" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/.idea/Faraone_TF.iml" />
+      <change type="MODIFICATION" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/.idea/modules.xml" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/.idea/vcs.xml" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/.idea/workspace.xml" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/config/default.ini" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/config/default.ini" />
+      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/data/iris_test.csv" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/iris_test.csv" />
+      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/data/iris_training.csv" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/iris_training.csv" />
+      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/data/old/enigma_test.csv" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/old/enigma_test.csv" />
+      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/data/old/enigma_train.csv" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/old/enigma_train.csv" />
+      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/data/old/enigma_validation.csv" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/old/enigma_validation.csv" />
+      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/src/FCNRunner.py" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/fcn_runner.py" />
+      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/src/FullyConnectedNet.py" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/fcn.py" />
+      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/src/__init__.py" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/__init__.py" />
+      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/src/configreader.py" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/config_reader.py" />
+      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/src/csvreader.py" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/csv_reader.py" />
+      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/src/main.py" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/Faraone_TF.py" />
+      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/src/utils.py" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/utils.py" />
     </list>
     <list id="34e257b5-fed4-450d-8cdc-175a464be87c" name="trash" comment="" />
     <ignored path="MLP_Class.iws" />
@@ -30,14 +61,34 @@
     <favorites_list name="MLP_Class" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5706941">
+    <splitter split-orientation="horizontal" split-proportion="0.692848">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="FullyConnectedNet.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mlp_classification/src/FullyConnectedNet.py">
+          <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/utils.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="121">
-                  <caret line="63" column="66" selection-start-line="63" selection-start-column="66" selection-end-line="63" selection-end-column="66" />
+                <state relative-caret-position="0">
+                  <caret line="24" column="84" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="84" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="fcn_runner.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/fcn_runner.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-2100">
+                  <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="fcn.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/fcn.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
                   <folding>
                     <element signature="e#0#23#0" expanded="true" />
                   </folding>
@@ -45,95 +96,73 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="nn.py" pinned="false" current-in-tab="false">
-            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/nn.py">
+          <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
+            <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/setup.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="460" column="4" selection-start-line="460" selection-start-column="4" selection-end-line="460" selection-end-column="4" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="nn_ops.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="nn_ops.py" pinned="false" current-in-tab="false">
             <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/nn_ops.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="61">
-                  <caret line="1535" column="50" selection-start-line="1535" selection-start-column="50" selection-end-line="1535" selection-end-column="50" />
+                <state relative-caret-position="21735">
+                  <caret line="1468" column="4" selection-start-line="1468" selection-start-column="4" selection-end-line="1468" selection-end-column="4" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="gen_nn_ops.py" pinned="false" current-in-tab="false">
-            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/gen_nn_ops.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-79">
-                  <caret line="2353" column="4" selection-start-line="2353" selection-start-column="4" selection-end-line="2353" selection-end-column="4" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mlp_classification/src/main.py">
+          <file leaf-file-name="Faraone_TF.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/Faraone_TF.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="150">
-                  <caret line="22" column="114" selection-start-line="22" selection-start-column="114" selection-end-line="22" selection-end-column="114" />
+                  <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
                   <folding>
-                    <element signature="e#0#16#0" expanded="true" />
+                    <element signature="e#0#9#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="csvreader.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mlp_classification/src/csvreader.py">
+          <file leaf-file-name="config_reader.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/config_reader.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-                  <folding>
-                    <element signature="e#115#125#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="gen_parsing_ops.py" pinned="false" current-in-tab="false">
-            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/gen_parsing_ops.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+                <state relative-caret-position="105">
+                  <caret line="8" column="20" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="input.py" pinned="false" current-in-tab="false">
-            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/training/input.py">
+          <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/__init__.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-259">
-                  <caret line="810" column="4" selection-start-line="810" selection-start-column="4" selection-end-line="810" selection-end-column="4" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="28" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="sampling_ops.py" pinned="false" current-in-tab="false">
-            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/contrib/training/python/training/sampling_ops.py">
+          <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/__init__.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-476">
-                  <caret line="343" column="4" selection-start-line="343" selection-start-column="4" selection-end-line="343" selection-end-column="4" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="variables.py" pinned="false" current-in-tab="false">
-            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/variables.py">
+          <file leaf-file-name="default.ini" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/config/default.ini">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="146">
-                  <caret line="576" column="6" selection-start-line="576" selection-start-column="6" selection-end-line="576" selection-end-column="6" />
+                <state relative-caret-position="690">
+                  <caret line="46" column="60" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="60" />
                   <folding />
                 </state>
               </provider>
@@ -144,10 +173,20 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="default.ini" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/mlp_classification/config/default.ini">
+            <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/config/default.ini">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="690">
-                  <caret line="46" column="60" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="60" />
+                <state relative-caret-position="540">
+                  <caret line="36" column="15" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="train_uniq.csv" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_uniq.csv">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="18900">
+                  <caret line="1260" column="1267" selection-start-line="1260" selection-start-column="1267" selection-end-line="1260" selection-end-column="1267" />
                   <folding />
                 </state>
               </provider>
@@ -161,41 +200,54 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Setup Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$/win/PycharmProjects/MLP_Class" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mlp_classification/data/iris.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/iris.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/data/enigma_test.csv" />
-        <option value="$PROJECT_DIR$/mlp_classification/data/enigma_train.csv" />
-        <option value="$PROJECT_DIR$/mlp_classification/data/enigma_validation.csv" />
-        <option value="$PROJECT_DIR$/mlp_classification/Temp" />
-        <option value="$PROJECT_DIR$/mlp_classification/__init__.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/mlp/CNN.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/mlp/FullyConnectedNet.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/mlp/utils.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/mlp/FCNRunner.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/mlp/ClassifyBaseModel.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/main.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/config/default.txt" />
-        <option value="$PROJECT_DIR$/mlp_classification/mlp/csvreader.py" />
-        <option value="$PROJECT_DIR$/utils.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/src/ClassifyBaseModel.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/src/utils.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/src/configreader.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/data/train_fake.csv" />
-        <option value="$PROJECT_DIR$/mlp_classification/data/train_small.csv" />
-        <option value="$PROJECT_DIR$/mlp_classification/src/FCNRunner.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/src/main.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/config/default.ini" />
-        <option value="$PROJECT_DIR$/mlp_classification/src/csvreader.py" />
-        <option value="$PROJECT_DIR$/mlp_classification/src/FullyConnectedNet.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/data/iris.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/iris.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/data/enigma_test.csv" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/data/enigma_train.csv" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/data/enigma_validation.csv" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/Temp" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/__init__.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/mlp/CNN.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/mlp/FullyConnectedNet.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/mlp/utils.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/mlp/FCNRunner.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/mlp/ClassifyBaseModel.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/config/default.txt" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/mlp/csvreader.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/utils.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/src/ClassifyBaseModel.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/src/utils.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/src/configreader.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/data/train_fake.csv" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/data/train_small.csv" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/src/csvreader.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/config/default.ini" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/src/FCNRunner.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/src/FullyConnectedNet.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/src/main.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/mlp/__init__.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/main.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp/mlp.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/mlp.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/mlp.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/__init__.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/Faraone_TF/Faraone_TF.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/FCN.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/FCN/__init__.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/FCN_Runner.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/FCN/FCN.py" />
+        <option value="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/fcn_runner.py" />
       </list>
     </option>
   </component>
@@ -205,8 +257,7 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-4" />
-    <option name="width" value="1928" />
+    <option name="width" value="1918" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -253,109 +304,27 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MLP_Class" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MLP_Class" />
+              <option name="myItemId" value="Faraone_TF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MLP_Class" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mlp_classification" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MLP_Class" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MLP_Class" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mlp_classification" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="log" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MLP_Class" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MLP_Class" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mlp_classification" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MLP_Class" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MLP_Class" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mlp_classification" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MLP_Class" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MLP_Class" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mlp_classification" />
+              <option name="myItemId" value="Faraone_TF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CarND-Keras-Lab" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$USER_HOME$/win/PycharmProjects/MLP_Class" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/ramibotros/win/PycharmProjects/MLP_Class/mlp_classification/main.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -369,18 +338,19 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/mlp_classification/data" />
-      <recent name="$PROJECT_DIR$/mlp_classification/mlp" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/mlp_classification/data" />
-      <recent name="$PROJECT_DIR$/mlp_classification/data/old" />
-      <recent name="$PROJECT_DIR$/mlp_classification/src" />
-      <recent name="$PROJECT_DIR$/mlp_classification" />
+      <recent name="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp" />
+      <recent name="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/FCN" />
+      <recent name="$USER_HOME$/win/PycharmProjects/Faraone_TF" />
+      <recent name="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification" />
+      <recent name="$USER_HOME$/win/PycharmProjects/MLP_Class" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/data" />
+      <recent name="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/mlp" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.Faraone_TF">
     <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -388,13 +358,13 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mlp_classification" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MLP_Class" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mlp_classification/src/main.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/mlp/mlp.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -406,13 +376,13 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mlp_classification" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MLP_Class" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mlp_classification/Temp" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/Temp" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -424,13 +394,31 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mlp_classification/src" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MLP_Class" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mlp_classification/src/configreader.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/mlp/config_reader/config_reader.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Faraone_TF" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/win/PycharmProjects/Faraone_TF" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Faraone_TF" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/win/PycharmProjects/Faraone_TF/Faraone_TF.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -575,16 +563,18 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.main" />
       <item index="1" class="java.lang.String" itemvalue="Python.Temp" />
       <item index="2" class="java.lang.String" itemvalue="Python.configreader" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Faraone_TF" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.main" />
-        <item index="1" class="java.lang.String" itemvalue="Python.configreader" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Temp" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.Faraone_TF" />
+        <item index="1" class="java.lang.String" itemvalue="Python.main" />
+        <item index="2" class="java.lang.String" itemvalue="Python.configreader" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Temp" />
       </list>
     </recent_temporary>
   </component>
@@ -743,7 +733,14 @@
       <option name="project" value="LOCAL" />
       <updated>1485828270034</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="stratrified">
+      <created>1485889627561</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1485889627561</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -756,16 +753,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="0" width="1928" height="1050" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1918" height="1050" extended-state="4" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.184375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21780105" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27874187" sideWeight="0.4046875" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28524947" sideWeight="0.40729168" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28958786" sideWeight="0.49121523" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25834543" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4934924" sideWeight="0.5953125" order="2" side_tool="false" content_ui="tabs" x="784" y="407" width="712" height="332" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25813448" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4913232" sideWeight="0.59270835" order="2" side_tool="false" content_ui="tabs" x="784" y="407" width="712" height="332" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -811,88 +808,27 @@
     <MESSAGE value="fixed l2 regularization bug" />
     <MESSAGE value="loss mean instead of sum" />
     <MESSAGE value="fixed transposed data input bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed transposed data input bug" />
+    <MESSAGE value="stratrified" />
+    <option name="LAST_COMMIT_MESSAGE" value="stratrified" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="38" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/fcn_runner.py</url>
+          <line>75</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="41" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/configreader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#19#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/FullyConnectedNet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/csvreader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/FCNRunner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/ClassifyBaseModel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/configreader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#19#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/config/default.ini">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/config/default.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="18" column="9" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="9" />
@@ -900,108 +836,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/main.py">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/Faraone_TF.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/data/iris_test.csv">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/data/iris_test.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/utils.py">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/csvreader.py">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/csv_reader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="16" column="64" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/data/old/enigma_validation.csv">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/data/old/enigma_validation.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="580" column="6" selection-start-line="580" selection-start-column="6" selection-end-line="580" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/__init__.py">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/data/old/enigma_train.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/ClassifyBaseModel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/data/old/enigma_train.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/data/iris_test.csv">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/data/iris_test.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/data/old/enigma_test.csv">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/data/old/enigma_test.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="775" column="0" selection-start-line="775" selection-start-column="0" selection-end-line="775" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="24" column="84" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/contrib/layers/python/layers/regularizers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/data/train_fake.csv">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_fake.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="1519" selection-start-line="5" selection-start-column="1519" selection-end-line="5" selection-end-column="1519" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/data/train_small.csv">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_small.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1013,59 +917,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/data/enigma_validation_sex(age).csv">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/data/enigma_validation_sex(age).csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-10871">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/data/enigma_test_sex(age).csv">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/data/enigma_test_sex(age).csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-14606">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/data/enigma_train_sex-age.csv">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/data/enigma_train_sex-age.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="85" selection-start-line="5" selection-start-column="85" selection-end-line="5" selection-end-column="85" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/data/valid_uniq.txt">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/data/valid_uniq.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9596">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/contrib/layers/python/layers/layers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2126">
-          <caret line="715" column="4" selection-start-line="715" selection-start-column="4" selection-end-line="715" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/data/train_uniq.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5634">
-          <caret line="1260" column="1267" selection-start-line="1260" selection-start-column="1267" selection-end-line="1260" selection-end-column="1267" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/-1247971765/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="676" column="8" selection-start-line="676" selection-start-column="8" selection-end-line="676" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1101,29 +977,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/data/train_sum.txt">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_sum.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/FCNRunner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/configreader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1151,24 +1008,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="22" column="114" selection-start-line="22" selection-start-column="114" selection-end-line="22" selection-end-column="114" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/config/default.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="60" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/training/input.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-259">
@@ -1189,25 +1028,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-476">
           <caret line="343" column="4" selection-start-line="343" selection-start-column="4" selection-end-line="343" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/csvreader.py">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/csv_reader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
           <folding>
-            <element signature="e#115#125#0" expanded="true" />
+            <element signature="e#115#125#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/gen_nn_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-79">
-          <caret line="2353" column="4" selection-start-line="2353" selection-start-column="4" selection-end-line="2353" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1219,20 +1049,167 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mlp_classification/src/FullyConnectedNet.py">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_uniq.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="63" column="66" selection-start-line="63" selection-start-column="66" selection-end-line="63" selection-end-column="66" />
+        <state relative-caret-position="18900">
+          <caret line="1260" column="1267" selection-start-line="1260" selection-start-column="1267" selection-end-line="1260" selection-end-column="1267" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/contrib/metrics/python/ops/metric_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="431" column="4" selection-start-line="431" selection-start-column="4" selection-end-line="431" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/-1247971765/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="676" column="8" selection-start-line="676" selection-start-column="8" selection-end-line="676" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/gen_nn_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2353" column="4" selection-start-line="2353" selection-start-column="4" selection-end-line="2353" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/contrib/layers/python/layers/regularizers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="111" column="4" selection-start-line="111" selection-start-column="4" selection-end-line="111" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/contrib/layers/python/layers/layers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18600">
+          <caret line="1264" column="4" selection-start-line="1264" selection-start-column="4" selection-end-line="1264" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/nn_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21735">
+          <caret line="1468" column="4" selection-start-line="1468" selection-start-column="4" selection-end-line="1468" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/src/ClassifyBaseModel.py" />
+    <entry file="file://$USER_HOME$/win/PycharmProjects/MLP_Class/mlp_classification/src/__init__.py" />
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="24" column="84" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/.directory">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/config/default.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="60" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="28" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/config_reader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/Faraone_TF.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/FCN/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="25" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/fcn_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2100">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/fcn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/nn_ops.py">
+    <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="1535" column="50" selection-start-line="1535" selection-start-column="50" selection-end-line="1535" selection-end-column="50" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
