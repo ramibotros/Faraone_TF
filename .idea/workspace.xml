@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3753841-f2fd-4d0d-81dc-a81446489ff2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/enigma_test_sex(age).csv" />
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/enigma_train_sex-age.csv" />
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/enigma_validation_sex(age).csv" />
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_chaos.txt" />
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_fake.csv" />
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_simple.txt" />
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_small.csv" />
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_sum.txt" />
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_trivial.txt" />
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/train_uniq.csv" />
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/valid_uniq.txt" />
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/setup.py" />
-      <change type="DELETED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/.idea/Psych.iml" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/src/ClassifyBaseModel.py" afterPath="" />
-      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/.idea/MLP_Class.iml" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/.idea/Faraone_TF.iml" />
-      <change type="MODIFICATION" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/.idea/modules.xml" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/.idea/vcs.xml" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/.idea/workspace.xml" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/config/default.ini" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/config/default.ini" />
-      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/data/iris_test.csv" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/iris_test.csv" />
-      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/data/iris_training.csv" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/iris_training.csv" />
-      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/data/old/enigma_test.csv" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/old/enigma_test.csv" />
-      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/data/old/enigma_train.csv" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/old/enigma_train.csv" />
-      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/data/old/enigma_validation.csv" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/data/old/enigma_validation.csv" />
-      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/src/FCNRunner.py" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/fcn_runner.py" />
-      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/src/FullyConnectedNet.py" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp/fcn.py" />
-      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/src/__init__.py" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/__init__.py" />
-      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/src/configreader.py" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/config_reader.py" />
-      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/src/csvreader.py" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/csv_reader.py" />
-      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/src/main.py" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/Faraone_TF.py" />
-      <change type="MOVED" beforePath="$USER_HOME$/win/PycharmProjects/Faraone_TF/mlp_classification/src/utils.py" afterPath="$USER_HOME$/win/PycharmProjects/Faraone_TF/utils.py" />
     </list>
     <list id="34e257b5-fed4-450d-8cdc-175a464be87c" name="trash" comment="" />
     <ignored path="MLP_Class.iws" />
@@ -99,8 +63,8 @@
           <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
             <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/setup.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state relative-caret-position="180">
+                  <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -582,7 +546,7 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>$USER_HOME$/.subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -740,7 +704,14 @@
       <option name="project" value="LOCAL" />
       <updated>1485889627561</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="added running accuracy&#10;restructured directories">
+      <created>1486070585915</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1486070585915</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -754,9 +725,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1918" height="1050" extended-state="4" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21780105" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21780105" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28524947" sideWeight="0.40729168" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28958786" sideWeight="0.49121523" order="1" side_tool="false" content_ui="tabs" />
@@ -809,7 +780,8 @@
     <MESSAGE value="loss mean instead of sum" />
     <MESSAGE value="fixed transposed data input bug" />
     <MESSAGE value="stratrified" />
-    <option name="LAST_COMMIT_MESSAGE" value="stratrified" />
+    <MESSAGE value="added running accuracy&#10;restructured directories" />
+    <option name="LAST_COMMIT_MESSAGE" value="added running accuracy&#10;restructured directories" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1208,8 +1180,8 @@
     </entry>
     <entry file="file://$USER_HOME$/win/PycharmProjects/Faraone_TF/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
