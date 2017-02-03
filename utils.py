@@ -2,6 +2,7 @@ import tensorflow as tf
 import datetime
 from subprocess import Popen, PIPE, STDOUT
 import os
+import atexit
 
 def background_process(arg_list):
     try:
@@ -10,7 +11,8 @@ def background_process(arg_list):
         import os
         DEVNULL = open(os.devnull, 'wb')
 
-    Popen(arg_list, stdin=PIPE, stdout=DEVNULL, stderr=DEVNULL)
+    p = Popen(arg_list, stdin=PIPE, stdout=DEVNULL, stderr=DEVNULL)
+    #atexit.register(p.kill)
 
 def make_it_hot(labels, num_classes):
     labels_fixed = tf.squeeze(tf.to_int64(labels))
@@ -21,8 +23,7 @@ def make_it_hot(labels, num_classes):
 
 def variable_summaries(var, name, collections_tag):
     """Attach a lot of summaries to a Tensor."""
-    with tf.name_scope('%s_%s_summary' % (collections_tag, name)):
-        tf.summary.scalar(name, var, collections=["%s_summaries" % collections_tag])
+    tf.summary.scalar(name, var, collections=["%s_summaries" % collections_tag])
 
 
 def date_time_string():

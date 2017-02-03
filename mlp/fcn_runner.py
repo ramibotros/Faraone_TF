@@ -1,12 +1,11 @@
 import os
 import threading
-import time
 
 import numpy as np
 import tensorflow as tf
 
-from mlp .fcn import FCN
 import utils
+from mlp.fcn import FCN
 
 
 class FCNRunner:
@@ -50,32 +49,39 @@ class FCNRunner:
         config = self.config
 
         train_batch_size = config.getint("TRAINING", "batch_size")
-        self.network.bind_graph("TRAIN", train_data_cols, train_batch_size, reuse=False, with_training_op=True)
+        with tf.name_scope("Train"):
+            self.network.bind_graph("TRAIN", train_data_cols, train_batch_size, reuse=False, with_training_op=True)
         self.train_op = self.network.train_op
         self.train_loss = self.network.loss
-        self.train_accuracy = self.network.calculate_accuracy_op
-        self.train_summaries_merged = self.network.summaries_merged
+        self.train_str_accu = self.network.streaming_accu_op
+        self.train_accuracy = self.network.accuracy
 
+        self.train_summaries_merged = self.network.get_summaries("TRAIN")
 
     def bind_validation_dataqueue(self, valid_data_cols):
         config = self.config
 
         # now reuse the graph to bind new OPs that handle the validation data:
         valid_batch_size = config.getint("TRAINING", "validation_batch_size")
-        self.network.bind_graph("VALID", valid_data_cols, valid_batch_size, reuse=True, with_training_op=False)
+        with tf.name_scope("Valid"):
+            self.network.bind_graph("VALID", valid_data_cols, valid_batch_size, reuse=True, with_training_op=False)
         self.valid_loss = self.network.loss
-        self.valid_accuracy = self.network.calculate_accuracy_op
-        self.valid_summaries_merged = self.network.summaries_merged
+        self.valid_str_accu = self.network.streaming_accu_op
+        self.valid_accuracy = self.network.accuracy
+
+        self.valid_summaries_merged = self.network.get_summaries("VALID")
 
     def bind_test_dataqueue(self, test_data_cols):
         config = self.config
 
         # now resuse the graph to bind new OPS that handle the test data:
         test_batch_size = config.getint("TEST", "batch_size")
-        self.network.bind_graph("TEST", test_data_cols, test_batch_size, reuse=True, with_training_op=False)
+        with tf.name_scope("Test"):
+            self.network.bind_graph("TEST", test_data_cols, test_batch_size, reuse=True, with_training_op=False)
         self.test_loss = self.network.loss
-        self.test_accuracy = self.network.calculate_accuracy_op
-        self.test_summaries_merged = self.network.summaries_merged
+        self.test_str_accu = self.network.streaming_accu_op
+        self.test_accuracy = self.network.accuracy
+        self.test_summaries_merged = self.network.get_summaries("TEST")
         self.test_predictions = self.network.predictions
         self.test_pred_path = config["TEST"]["write_predictions_to"]
 
@@ -92,8 +98,7 @@ class FCNRunner:
             self.load_checkpoint(load_checkpoint)
 
         self.session.run(tf.global_variables_initializer())
-        self.session.run(tf.local_variables_initializer()) #for streaming metrics
-
+        self.session.run(tf.local_variables_initializer())  # for streaming metrics
 
         self.create_summary_writers()
 
@@ -124,54 +129,30 @@ class FCNRunner:
         pass
 
     def train_once(self, i):
-        _, train_loss, training_summary, training_accuracy = self.session.run(
-            [self.train_op, self.train_loss, self.train_summaries_merged, self.train_accuracy],
+        _, train_loss, training_summary, training_accuracy, train_streaming_accuracy = self.session.run(
+            [self.train_op, self.train_loss, self.train_summaries_merged, self.train_accuracy, self.train_str_accu],
             feed_dict={self.network.keep_prob: self.keep_prob, self.network.is_training: True})
 
         self.train_summary_writer.add_summary(training_summary, i)
 
-
-        print("Training accuracy at the end of iteration %i:\t\t%f\t,\tloss:\t%f" % (i, training_accuracy, train_loss))
+        print("Training at the end of iteration %i:\tAccuracy:\t%f\tStreaming Accu:\t%f\tloss:\t%f" % (
+            i, training_accuracy, train_streaming_accuracy, train_loss))
         self.train_summary_writer.flush()
 
     def load_checkpoint(self, path):
         self.saver.restore(self.session, path)
         print("Checkpoint loaded from %s" % path)
 
-    def validate_once_and_sleep(self):
-        while True:
-            if not self.last_train_iteration:
-                time.sleep(self.validation_interval)
-
-            # self.saver.restore(self.session, self.newest_checkpoint_path)
-            # Assuming model_checkpoint_path looks something like:
-            #   /my-favorite-path/cifar10_train/model.ckpt-0,
-            # extract global_step from it.
-            # global_step = int(self.newest_checkpoint_path.split('/')[-1].split('-')[-1])
-
-            validation_summary, validation_accuracy, validation_loss = self.session.run(
-                [self.valid_summaries_merged, self.valid_accuracy, self.valid_loss],
-                feed_dict={self.network.keep_prob: 1.0, self.network.is_training: False})
-
-            self.valid_summary_writer.add_summary(validation_summary, self.last_train_iteration)
-
-            print("\n\n" + "*" * 80)
-            print("Validation accuracy at the end of iteration %i:\t\t%f\tloss:\t%f" % (
-                self.last_train_iteration, validation_accuracy, validation_loss))
-            print("*" * 80 + "\n\n")
-
-            time.sleep(self.validation_interval)
-
     def validate_once(self, i):
-        validation_summary, validation_accuracy, validation_loss = self.session.run(
-            [self.valid_summaries_merged, self.valid_accuracy, self.valid_loss],
+        validation_summary, validation_accuracy, validation_streaming_accuracy, validation_loss = self.session.run(
+            [self.valid_summaries_merged, self.valid_accuracy, self.valid_str_accu, self.valid_loss],
             feed_dict={self.network.keep_prob: 1, self.network.is_training: False})
 
         self.valid_summary_writer.add_summary(validation_summary, i)
 
         print("\n\n" + "*" * 80)
-        print("Validation accuracy at the end of iteration %i:\t\t%f\tloss:\t%f" % (
-            i, validation_accuracy, validation_loss))
+        print("Validation after iteration %i:\tAccuracy:\t%f\tStreaming Accu:\t%f\tloss:\t%f" % (
+            i, validation_accuracy, validation_streaming_accuracy, validation_loss))
         print("*" * 80 + "\n\n")
         self.valid_summary_writer.flush()
 
@@ -183,7 +164,7 @@ class FCNRunner:
         self.test_summary_writer.add_summary(test_summary, 1)
 
         print("\n\n" + "*" * 80)
-        print("Test accuracy at the end:\t\t%f\tloss:\t%f" % (
+        print("Test accuracy at the end:\t%f\tloss:\t%f" % (
             test_accuracy, test_loss))
         print("*" * 80 + "\n\n")
         self.test_summary_writer.flush()

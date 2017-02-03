@@ -28,7 +28,8 @@ if "TRAINING" in config:
 
 if "TEST" in config:
     test_path = config["TEST"]["test_file"]
-    test_rows = csv_reader.read_csv(test_path, int(config["TEST"]["batch_size"]))
+    with tf.name_scope("test_data"):
+        test_rows = csv_reader.read_csv(test_path, int(config["TEST"]["batch_size"]))
     iris_runner.bind_test_dataqueue(test_rows)
 
 iris_runner.initialize()
