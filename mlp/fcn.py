@@ -190,16 +190,21 @@ class FCN:
             raise ValueError("Please provide any of [vanilla, adam, adagrad, rmsprop] for optimisation")
 
         with tf.name_scope("gradient_descent"):
-            train_op = None
+            optimizer = None
             if type == "vanilla":
-                train_op = tf.train.GradientDescentOptimizer(self.learning_rate).minimize(self.loss)
+                optimizer = tf.train.GradientDescentOptimizer(self.learning_rate)
             elif type == "adam":
-                train_op = tf.train.AdamOptimizer(self.learning_rate).minimize(self.loss)
+                optimizer = tf.train.AdamOptimizer(self.learning_rate)
             elif type == "adagrad":
-                train_op = tf.train.AdagradOptimizer(self.learning_rate).minimize(self.loss)
+                optimizer = tf.train.AdagradOptimizer(self.learning_rate)
             elif type == "rmsprop":
-                train_op = tf.train.RMSPropOptimizer(self.learning_rate).minimize(self.loss)
-            return train_op
+                optimizer = tf.train.RMSPropOptimizer(self.learning_rate)
+
+            grads_and_vars = optimizer.compute_gradients(self.loss)
+
+
+            capped_grads_and_vars = [(tf.clip_by_value(g,-10,10), v) for g,v in grads_and_vars]
+            return optimizer.apply_gradients(capped_grads_and_vars)
 
     def get_summaries(self, corpus_tag):
         #return tf.summary.merge(tf.get_collection("%s_summaries" % corpus_tag))
