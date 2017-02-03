@@ -1,6 +1,6 @@
 import configparser
 import os
-
+import utils
 
 class My_Config_Parser(configparser.ConfigParser):
     def __init__(self, *args, **kwargs):
@@ -13,11 +13,19 @@ class My_Config_Parser(configparser.ConfigParser):
         else:
             return int(raw_get)
 
+    def get_rel_path(self, *args, **kwargs):
+        raw_get = self.get(*args, **kwargs)
+        if not raw_get:
+            return ""
+        if raw_get.startswith('/'):
+            return raw_get
+
+        return utils.abs_path_of(raw_get)
+
 
 
 def read_config(path):
     config = My_Config_Parser(inline_comment_prefixes=['#'], interpolation=configparser.ExtendedInterpolation())
-    assert os.path.isfile(path)
     config.read(path)
 
     return config

@@ -37,7 +37,7 @@ class FCNRunner:
         self.config = config
 
         # config:
-        self.log_folder = config.get("PATHS", "log_folder")
+        self.log_folder = config.get_rel_path("PATHS", "log_folder")
         self.experiment_ID = config.get("PROCESS", "experiment_ID") or utils.date_time_string()
         self.validation_interval = config.getint("PROCESS", "validation_interval", fallback=15)
         self.keep_prob = config.getfloat("TRAINING", "dropout_keep_probability", fallback=1.0)
@@ -83,7 +83,7 @@ class FCNRunner:
         self.test_accuracy = self.network.accuracy
         self.test_summaries_merged = self.network.get_summaries("TEST")
         self.test_predictions = self.network.predictions
-        self.test_pred_path = config["TEST"]["write_predictions_to"]
+        self.test_pred_path = config.get_rel_path("TEST","write_predictions_to")
 
     def initialize(self):
         config = self.config
@@ -91,7 +91,7 @@ class FCNRunner:
 
         self.saver = tf.train.Saver(tf.global_variables())
         self.checkpoint_every = config.getint("PROCESS", "checkpoint_every")
-        self.checkpoint_path = config.get("PATHS", "checkpoint_dir") + "/training.ckpt"
+        self.checkpoint_path = config.get_rel_path("PATHS", "checkpoint_dir") + "/training.ckpt"
 
         load_checkpoint = config.get("PROCESS", "initialize_with_checkpoint") or None
         if load_checkpoint:

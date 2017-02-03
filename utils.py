@@ -29,7 +29,8 @@ def variable_summaries(var, name, collections_tag):
 def date_time_string():
     return datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
 
-
+def abs_path_of(rel_path):
+    return os.path.join(os.path.dirname(__file__), rel_path)
 
 def mkdir_recursive(path):
     if not path:
