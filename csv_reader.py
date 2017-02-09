@@ -29,7 +29,7 @@ def read_csv(filename, batch_size, stratify_task="", config=None):
             num_classes = config.getint(stratify_task, "num_classes")
             target_dist = [1.0 / num_classes] * num_classes
 
-            decoded, _ = stratified_sample(decoded, labels, target_dist, batch_size=1, threads_per_queue=4)
+            decoded, _ = stratified_sample(decoded, labels, target_dist, batch_size=1, threads_per_queue=1)
 
     with tf.name_scope("shuffled_batching"):
         batches = tf.train.shuffle_batch(decoded,
