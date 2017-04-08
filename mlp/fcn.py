@@ -1,5 +1,6 @@
 import tensorflow as tf
-from tensorflow.contrib.layers import fully_connected, l1_l2_regularizer
+from tensorflow.contrib.layers import fully_connected
+from tensorflow.contrib.layers import l1_regularizer, l2_regularizer
 from tensorflow.contrib.metrics import streaming_accuracy, streaming_mean_relative_error
 from tensorflow.contrib.slim import batch_norm
 from tensorflow.python.ops import control_flow_ops
@@ -8,16 +9,13 @@ from config_reader import get_task_sections
 
 
 class FCN:
-    """
-        This employs a Softmax Classifier for multilabel classification
-        We will employ a simple Softmax Model to classify the captions
-    """
 
     def __init__(self, config):
         self.input_features_slicer = config.get_as_slice("FEATURES", "columns")
 
         self.l1_reg = [config.getfloat("TRAINING", "l1_regularization", fallback=0.0)]
         self.l2_reg = [config.getfloat("TRAINING", "l2_regularization", fallback=0.0)]
+        self.l1_l2_regularizer = lambda t: tf.add(l1_regularizer(self.l1_reg)(t), l2_regularizer(self.l2_reg)(t))
         self.num_hidden_units = config.getint("NETWORK", "layer_size")
         self.num_layers = config.getint("NETWORK", "num_layers")
         self.learning_rate = config.getfloat("TRAINING", "learning_rate")
@@ -31,10 +29,9 @@ class FCN:
 
         self.add_placeholders()
 
-        self.summary_dict = {}
-
-    def add_to_summary_dict(self, tensor, name, task_tag, corpus_tag):
-        self.summary_dict["%s_%s_%s" % (task_tag, name, corpus_tag)] = tensor
+    def variable_summaries(self, var, name, task_tag):
+        """Attach a lot of summaries to a Tensor."""
+        tf.summary.scalar("%s_%s" % (task_tag, name), var)
 
     def make_hidden_FN_layers(self, input_layer):
         previous_out = input_layer
@@ -51,7 +48,7 @@ class FCN:
                                                    self.num_hidden_units, activation_fn=tf.nn.relu,
                                                    normalizer_fn=normalizer_fun,
                                                    normalizer_params=normalizer_params,
-                                                   weights_regularizer=l1_l2_regularizer(self.l1_reg, self.l2_reg),
+                                                   weights_regularizer=self.l1_l2_regularizer,
                                                    scope=layer_scope)
 
                     # if i == self.num_layers:
@@ -65,14 +62,15 @@ class FCN:
                                         loss_weight=1):
         with tf.variable_scope("output_layer_%s" % task_tag) as layer_scope:
             last_out = fully_connected(last_hidden_layer, num_classes, activation_fn=tf.identity,
-                                       weights_regularizer=l1_l2_regularizer(self.l1_reg, self.l2_reg),
+                                       weights_regularizer=self.l1_l2_regularizer,
                                        scope=layer_scope)
             self.predictions = tf.nn.softmax(last_out)
 
         with tf.name_scope("%s_%s_stats" % (corpus_tag, task_tag)):
-            loss = loss_weight * tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(last_out, gt_labels))
+            loss = loss_weight * tf.reduce_mean(
+                tf.nn.sparse_softmax_cross_entropy_with_logits(labels=gt_labels, logits=last_out))
             # utils.variable_summaries(loss, "loss", corpus_tag)
-            self.add_to_summary_dict(loss, "loss", task_tag, corpus_tag)
+            self.variable_summaries(loss, "loss", task_tag)
 
             tf.add_to_collection(tf.GraphKeys.LOSSES, loss)
 
@@ -80,7 +78,7 @@ class FCN:
                                              updates_collections=tf.GraphKeys.UPDATE_OPS)
             str_accu = 100 * str_accu
             # utils.variable_summaries(str_accu, "streaming_accuracy", corpus_tag)
-            self.add_to_summary_dict(str_accu, "streaming_accuracy", task_tag, corpus_tag)
+            self.variable_summaries(str_accu, "streaming_accuracy", task_tag)
 
             updates_op = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
             self.streaming_accu_op = control_flow_ops.with_dependencies(updates_op, str_accu)
@@ -88,39 +86,42 @@ class FCN:
             correct_prediction = tf.equal(tf.argmax(last_out, 1), gt_labels)
             accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32)) * 100
             # utils.variable_summaries(accuracy, "accuracy", corpus_tag)
-            self.add_to_summary_dict(accuracy, "accuracy", task_tag, corpus_tag)
+            self.variable_summaries(accuracy, "accuracy", task_tag)
             self.accuracy = accuracy
 
     def add_linear_output_layer(self, last_hidden_layer, ground_truth, corpus_tag, task_tag, loss_weight=1):
         with tf.variable_scope("output_layer_%s" % task_tag) as layer_scope:
             last_out = fully_connected(last_hidden_layer, 1, activation_fn=tf.identity,
-                                       weights_regularizer=l1_l2_regularizer(self.l1_reg, self.l2_reg),
+                                       weights_regularizer=self.l1_l2_regularizer,
                                        scope=layer_scope)
             last_out = tf.squeeze(last_out)
             self.predictions = last_out
 
         with tf.name_scope("%s_%s_stats" % (corpus_tag, task_tag)):
             loss = loss_weight * tf.reduce_mean(tf.squared_difference(last_out, ground_truth))
+
             # utils.variable_summaries(loss, "loss", corpus_tag)
-            self.add_to_summary_dict(loss, "loss", task_tag, corpus_tag)
+            self.variable_summaries(loss, "loss", task_tag)
             tf.add_to_collection(tf.GraphKeys.LOSSES, loss)
 
-            str_accu, _ = streaming_mean_relative_error(last_out, ground_truth, ground_truth,
-                                                        name="acc_%s" % corpus_tag,
+            str_mre, _ = streaming_mean_relative_error(last_out, ground_truth, ground_truth,
                                                         updates_collections=tf.GraphKeys.UPDATE_OPS)
-            str_accu = 100 * (1 - str_accu)
+            str_accu = tf.multiply(100.0 ,(1.0 - str_mre),name="acc_%s" % corpus_tag)
             # utils.variable_summaries(str_accu, "streaming_accuracy", corpus_tag)
-            self.add_to_summary_dict(str_accu, "streaming_accuracy", task_tag, corpus_tag)
+            self.variable_summaries(str_accu, "streaming_accuracy", task_tag)
 
             updates_op = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
             self.streaming_accu_op = control_flow_ops.with_dependencies(updates_op, str_accu)
 
             accuracy = 100 * (1 -
-                              tf.reduce_mean(tf.select(tf.equal(ground_truth, tf.zeros_like(ground_truth)),
-                                                       tf.zeros_like(ground_truth),
-                                                       tf.div(tf.abs(last_out - ground_truth), ground_truth))))
+                              tf.reduce_mean(tf.where(
+                                  tf.equal(ground_truth, tf.zeros_like(ground_truth)),
+                                  tf.zeros_like(ground_truth),
+                                  tf.divide(tf.abs(last_out - ground_truth), ground_truth))
+                              )
+                              )
             # utils.variable_summaries(accuracy, "accuracy", corpus_tag)
-            self.add_to_summary_dict(accuracy, "accuracy", task_tag, corpus_tag)
+            self.variable_summaries(accuracy, "accuracy", task_tag)
             self.accuracy = accuracy
 
     def add_all_outputs_and_losses(self, input_features, input_data_cols, corpus_tag):
@@ -151,7 +152,7 @@ class FCN:
 
 
 
-        input_features = tf.reshape(tf.transpose(tf.pack(input_data_cols[self.input_features_slicer])),
+        input_features = tf.reshape(tf.transpose(tf.stack(input_data_cols[self.input_features_slicer])),
                                     [batch_size, -1])
 
         with tf.variable_scope("network", reuse=reuse):
@@ -167,7 +168,7 @@ class FCN:
 
             all_weight_vars = [tf.reshape(var, [-1]) for var in tf.get_collection(tf.GraphKeys.MODEL_VARIABLES) if
                                "/weights" in var.name]
-            tf.summary.histogram("weight_hist", tf.concat(0, all_weight_vars),
+            tf.summary.histogram("weight_hist", tf.concat(axis=0, values=all_weight_vars),
                                  collections=["%s_summaries" % corpus_tag])
 
             # self.summaries_merged = self.get_summaries(corpus_tag)
@@ -207,10 +208,6 @@ class FCN:
             capped_grads_and_vars = [(tf.clip_by_value(g, -10, 10), v) for g, v in grads_and_vars]
             return optimizer.apply_gradients(capped_grads_and_vars)
 
-    def get_summaries(self, corpus_tag):
+    def get_summaries(self):
         # return tf.summary.merge(tf.get_collection("%s_summaries" % corpus_tag))
-        for name, tensor in self.summary_dict.items():
-            if not name.endswith(corpus_tag):
-                continue
-            tf.summary.scalar(name, tensor, collections=["%s_summaries" % corpus_tag])
-        return tf.summary.merge(tf.get_collection("%s_summaries" % corpus_tag))
+        return tf.summary.merge_all()

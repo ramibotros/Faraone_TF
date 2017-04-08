@@ -56,7 +56,7 @@ class FCNRunner:
         self.train_str_accu = self.network.streaming_accu_op
         self.train_accuracy = self.network.accuracy
 
-        self.train_summaries_merged = self.network.get_summaries("TRAIN")
+        self.train_summaries_merged = self.network.get_summaries()
 
     def bind_validation_dataqueue(self, valid_data_cols):
         config = self.config
@@ -69,7 +69,7 @@ class FCNRunner:
         self.valid_str_accu = self.network.streaming_accu_op
         self.valid_accuracy = self.network.accuracy
 
-        self.valid_summaries_merged = self.network.get_summaries("VALID")
+        self.valid_summaries_merged = self.network.get_summaries()
 
     def bind_test_dataqueue(self, test_data_cols):
         config = self.config
@@ -81,7 +81,7 @@ class FCNRunner:
         self.test_loss = self.network.loss
         self.test_str_accu = self.network.streaming_accu_op
         self.test_accuracy = self.network.accuracy
-        self.test_summaries_merged = self.network.get_summaries("TEST")
+        self.test_summaries_merged = self.network.get_summaries()
         self.test_predictions = self.network.predictions
         self.test_pred_path = config.get_rel_path("TEST","write_predictions_to")
 

@@ -21,9 +21,7 @@ def make_it_hot(labels, num_classes):
     return one_hot_labels
 
 
-def variable_summaries(var, name, collections_tag):
-    """Attach a lot of summaries to a Tensor."""
-    tf.summary.scalar(name, var, collections=["%s_summaries" % collections_tag])
+
 
 
 def date_time_string():

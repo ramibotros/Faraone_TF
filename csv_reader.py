@@ -10,13 +10,15 @@ from tensorflow.contrib.training import stratified_sample
 def read_csv(filename, batch_size, stratify_task="", config=None):
     temporary_reader = csv.reader(open(filename))
     num_cols = len(next(temporary_reader))
+    print("%d columns found in %s" % (num_cols, filename))
     del temporary_reader
 
     with tf.name_scope("decoded_CSV_pipeline"):
         filename_queue = tf.train.string_input_producer([filename])
+
         reader = tf.TextLineReader()
         key, value = reader.read(filename_queue)
-        decoded = tf.decode_csv(value, record_defaults=[([0.0]) for _ in range(num_cols)])
+        decoded = tf.decode_csv(value, record_defaults=[[0.0] for _ in range(num_cols)])
 
     if stratify_task:
         with tf.name_scope("stratification"):
